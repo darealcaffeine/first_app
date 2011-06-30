@@ -7,7 +7,7 @@
     <link>http://www.bbc.co.uk/go/rss/int/news/-/news/</link>  
     <description>The latest stories from the Home section of the BBC News web site.</description>  
     <language>en-gb</language>  
-    <lastBuildDate>Thu, 30 Jun 2011 18:18:46 GMT</lastBuildDate>  
+    <lastBuildDate>Thu, 30 Jun 2011 20:07:36 GMT</lastBuildDate>  
     <copyright>Copyright: (C) British Broadcasting Corporation, see http://news.bbc.co.uk/2/hi/help/rss/4498287.stm for terms and conditions of reuse.</copyright>  
     <ttl>15</ttl>  
     <atom:link href="http://feeds.bbci.co.uk/news/rss.xml" rel="self" type="application/rss+xml"/>  
@@ -102,13 +102,13 @@
       <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53751000/jpg/_53751874_53750580.jpg"/> 
     </item>  
     <item> 
-      <title>Duke and Duchess lay wreath</title>  
-      <description>The Duke and Duchess of Cambridge have laid a wreath at Canada's National War Memorial at the start of their first official overseas tour.</description>  
+      <title>Crowds greet Duke and Duchess</title>  
+      <description>The Duke and Duchess of Cambridge have been greeted by cheering crowds at Government House in Ottawa.</description>  
       <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-13979606</link>  
       <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-13979606</guid>  
-      <pubDate>Thu, 30 Jun 2011 19:09:02 GMT</pubDate>  
-      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53794000/jpg/_53794278_012344727-1.jpg"/>  
-      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53794000/jpg/_53794280_012344727-1.jpg"/> 
+      <pubDate>Thu, 30 Jun 2011 19:57:43 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53794000/jpg/_53794800_012345100-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53794000/jpg/_53794802_012345100-1.jpg"/> 
     </item>  
     <item> 
       <title>Sydney dwellers paid to head into the countryside</title>  
@@ -147,11 +147,11 @@
       <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53794000/jpg/_53794197_clichy.jpg"/> 
     </item>  
     <item> 
-      <title>Live - Diamond League</title>  
-      <description>British triple jump world champion Phillips Idowu is in action while Asafa Powell stars in the 100m in this season's seventh Diamond League event in Lausanne.</description>  
+      <title>Diamond League as it happened</title>  
+      <description>Asafa Powell runs the fastest 100m of the year while Britain's Dai Greene wins the men's 400m hurdles at this season's seventh Diamond League event in Lausanne.</description>  
       <link>http://news.bbc.co.uk/go/rss/int/news/-/sport2/hi/athletics/9525314.stm</link>  
       <guid isPermaLink="false">http://news.bbc.co.uk/sport2/hi/athletics/9525314.stm</guid>  
-      <pubDate>Thu, 30 Jun 2011 17:52:59 GMT</pubDate>  
+      <pubDate>Thu, 30 Jun 2011 20:12:34 GMT</pubDate>  
       <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53789000/jpg/_53789048_powell.jpg"/>  
       <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53789000/jpg/_53789047_powell.jpg"/> 
     </item>  
@@ -160,7 +160,7 @@
       <description>Thousands of UK schools close on a day of strikes by public sector workers, but Downing Street says industrial action by civil servants caused "minimal impact".</description>  
       <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-13983820</link>  
       <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-13983820</guid>  
-      <pubDate>Thu, 30 Jun 2011 18:07:06 GMT</pubDate>  
+      <pubDate>Thu, 30 Jun 2011 20:04:29 GMT</pubDate>  
       <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53793000/jpg/_53793542_012339293-1.jpg"/>  
       <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53793000/jpg/_53793540_012339293-1.jpg"/> 
     </item>  
@@ -201,13 +201,13 @@
       <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53772000/jpg/_53772094_012339293-1.jpg"/> 
     </item>  
     <item> 
-      <title>Life term for hair-in-hand killer</title>  
-      <description>A fetishist who murdered and mutilated a Bournemouth mother before leaving someone else's hair in her hand will never be released from prison.</description>  
-      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-england-dorset-13969359</link>  
-      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-england-dorset-13969359</guid>  
-      <pubDate>Thu, 30 Jun 2011 13:19:13 GMT</pubDate>  
-      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53531000/jpg/_53531834_restivocbnps3a.jpg"/>  
-      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53531000/jpg/_53531832_restivocbnps3a.jpg"/> 
+      <title>Hungry 'on the run' boa is found</title>  
+      <description>A "hungry" snake, thought to have escaped leading police to warn children to stay indoors, is found safe at the owner's home.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-england-suffolk-13982235</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-england-suffolk-13982235</guid>  
+      <pubDate>Thu, 30 Jun 2011 18:04:19 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53772000/jpg/_53772621_diva.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53773000/jpg/_53773203_diva.jpg"/> 
     </item>  
     <item> 
       <title>Thousands strike in public sector</title>  
@@ -228,6 +228,15 @@
       <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53789000/jpg/_53789517_dsc_7522.jpg"/> 
     </item>  
     <item> 
+      <title>Talkback King David Dunseith dies</title>  
+      <description>Veteran journalist David Dunseith whose career in broadcasting spanned four decades has died.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-northern-ireland-13985089</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-northern-ireland-13985089</guid>  
+      <pubDate>Thu, 30 Jun 2011 20:01:35 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/52661000/jpg/_52661867_daviddunseithnew.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/52661000/jpg/_52661869_daviddunseithnew.jpg"/> 
+    </item>  
+    <item> 
       <title>Solicitor 'tried to smear Ford'</title>  
       <description>The justice minister writes to the Law Society urging them to investigate the behaviour of a leading Belfast solicitor, described as an attempted smear of David Ford.</description>  
       <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-northern-ireland-13983167</link>  
@@ -235,15 +244,6 @@
       <pubDate>Thu, 30 Jun 2011 17:55:21 GMT</pubDate>  
       <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53793000/jpg/_53793066_davidford.jpg"/>  
       <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53793000/jpg/_53793064_davidford.jpg"/> 
-    </item>  
-    <item> 
-      <title>Report criticises NI Ombudsman</title>  
-      <description>The Police Ombudsman Al Hutchinson has been subjected to withering criticism by an independent report which says his weak leadership has undermined the effectiveness of the office.</description>  
-      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-northern-ireland-13978341</link>  
-      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-northern-ireland-13978341</guid>  
-      <pubDate>Thu, 30 Jun 2011 17:53:15 GMT</pubDate>  
-      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53708000/jpg/_53708890__52176126__44948710_-4-1-1.jpg"/>  
-      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53708000/jpg/_53708892__52176126__44948710_-4-1-1.jpg"/> 
     </item>  
     <item> 
       <title>Pensioner killer care 'failings'</title>  
@@ -255,13 +255,13 @@
       <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53770000/jpg/_53770896_wns_gwen_poole_04.jpg"/> 
     </item>  
     <item> 
-      <title>'Learn lessons' in methadone case</title>  
-      <description>A report into the case of a couple from Porthmadog who gave their baby daughter the heroin-substitute methadone says lessons can be learned.</description>  
-      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-wales-north-west-wales-13980392</link>  
-      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-wales-north-west-wales-13980392</guid>  
-      <pubDate>Thu, 30 Jun 2011 18:22:29 GMT</pubDate>  
-      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53793000/jpg/_53793384_methadone464.jpg"/>  
-      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53793000/jpg/_53793383_methadone464.jpg"/> 
+      <title>Newspaper firm ends street sales</title>  
+      <description>Two of the biggest newspapers in Wales, the Western Mail and South Wales Echo, put a halt to sales in the street.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-wales-13981570</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-wales-13981570</guid>  
+      <pubDate>Thu, 30 Jun 2011 19:26:02 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53793000/jpg/_53793506_53793505.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53793000/jpg/_53793508_53793507.jpg"/> 
     </item>  
     <item> 
       <title>Three US soldiers killed in Iraq</title>  
@@ -399,6 +399,15 @@
       <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/50752000/jpg/_50752863_space.jpg"/> 
     </item>  
     <item> 
+      <title>Cost blow to Cairn India deal</title>  
+      <description>India puts an expensive condition on its approval for Cairn Energy to sell its stake in the country's biggest oil field.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/uk-scotland-scotland-business-13977917</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-scotland-scotland-business-13977917</guid>  
+      <pubDate>Thu, 30 Jun 2011 18:53:02 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53022000/jpg/_53022936_jex_1058603_de02-1.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53022000/jpg/_53022934_jex_1058603_de02-1.jpg"/> 
+    </item>  
+    <item> 
       <title>Pao de Acucar battle intensifies</title>  
       <description>The battle between France's Carrefour and Casino over Brazil's Pao de Acucar intensifies as Casino raises its stake in the firm.</description>  
       <link>http://www.bbc.co.uk/go/rss/int/news/-/news/business-13972490</link>  
@@ -406,15 +415,6 @@
       <pubDate>Thu, 30 Jun 2011 09:31:04 GMT</pubDate>  
       <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53751000/jpg/_53751185_pda_rtr.jpg"/>  
       <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53751000/jpg/_53751186_pda_rtr.jpg"/> 
-    </item>  
-    <item> 
-      <title>Toyota to recall 110,000 hybrids</title>  
-      <description>Toyota recalls more than 110,000 hybrid vehicles over concerns about a problem with the power supply circuit.</description>  
-      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/business-13970431</link>  
-      <guid isPermaLink="false">http://www.bbc.co.uk/news/business-13970431</guid>  
-      <pubDate>Thu, 30 Jun 2011 04:00:07 GMT</pubDate>  
-      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53770000/jpg/_53770256_highlander.jpg"/>  
-      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53770000/jpg/_53770258_highlander.jpg"/> 
     </item>  
     <item> 
       <title>Inkjet printing for solar panels</title>  
@@ -525,15 +525,6 @@
       <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53764000/jpg/_53764057_smoking_bbc.jpg"/> 
     </item>  
     <item> 
-      <title>Nato quells Kabul hotel assault</title>  
-      <description>Nato helicopters in Afghanistan are called in after an attack by suicide bombers and gunmen on a top hotel which left at least 11 civilians dead.</description>  
-      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-south-asia-13953883</link>  
-      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-south-asia-13953883</guid>  
-      <pubDate>Wed, 29 Jun 2011 12:07:10 GMT</pubDate>  
-      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53750000/jpg/_53750587_53750584.jpg"/>  
-      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53751000/jpg/_53751874_53750580.jpg"/> 
-    </item>  
-    <item> 
       <title>Greece strikes: Your views</title>  
       <description>BBC News website readers in Greece react to the latest wave of strikes against austerity measures</description>  
       <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-europe-13942308</link>  
@@ -541,6 +532,15 @@
       <pubDate>Tue, 28 Jun 2011 14:25:43 GMT</pubDate>  
       <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53735000/jpg/_53735961_img_0632.jpg"/>  
       <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53735000/jpg/_53735963_img_0632.jpg"/> 
+    </item>  
+    <item> 
+      <title>Nato quells Kabul hotel assault</title>  
+      <description>Nato helicopters in Afghanistan are called in after an attack by suicide bombers and gunmen on a top hotel which left at least 11 civilians dead.</description>  
+      <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-south-asia-13953883</link>  
+      <guid isPermaLink="false">http://www.bbc.co.uk/news/world-south-asia-13953883</guid>  
+      <pubDate>Wed, 29 Jun 2011 12:07:10 GMT</pubDate>  
+      <media:thumbnail width="66" height="49" url="http://news.bbcimg.co.uk/media/images/53750000/jpg/_53750587_53750584.jpg"/>  
+      <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53751000/jpg/_53751874_53750580.jpg"/> 
     </item>  
     <item> 
       <title>Blue Peter: Your memories</title>  
@@ -597,7 +597,7 @@
       <media:thumbnail width="144" height="81" url="http://news.bbcimg.co.uk/media/images/53793000/jpg/_53793589_jex_1093939_de27-1.jpg"/> 
     </item>  
     <item> 
-      <title>VIDEO: Greek pushes ahead on austerity plan</title>  
+      <title>VIDEO: Greece pushes ahead on austerity plan</title>  
       <description>Greece's parliament has passed a second vote on its austerity programme, which was needed to secure the country further financial support.</description>  
       <link>http://www.bbc.co.uk/go/rss/int/news/-/news/world-europe-13984262</link>  
       <guid isPermaLink="false">http://www.bbc.co.uk/news/world-europe-13984262</guid>  

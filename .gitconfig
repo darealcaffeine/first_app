@@ -1,7 +1,10 @@
 [user]
-	name = Darealcaffeine
+	name = Kevin Lau
 	email = darealcaffeine@gmail.com
 [alias]
 	co = checkout
 [core]
 	editor = pico -w
+[github]
+	user = darealcaffeine
+	token = f0dffef56558ce293268772959f477ce

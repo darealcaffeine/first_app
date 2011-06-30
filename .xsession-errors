@@ -29,3 +29,34 @@ Window manager warning: Invalid WM_TRANSIENT_FOR window 0x382a7a6 specified for 
 
 ** (gnome-system-monitor:9167): WARNING **: SELinux was found but is not enabled.
 
+
+(firefox-bin:8785): Gtk-CRITICAL **: IA__gtk_clipboard_set_with_data: assertion `targets != NULL' failed
+** (process:2828): DEBUG: zeitgeist-datahub.vala:174: Inserting 1 events
+** (process:2828): DEBUG: desktop-launch-listener.vala:118: ran with uri: file:///home/darealcaffeine
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'net usershare' returned error 255: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error No such file or directory
+Please ask your system administrator to enable user sharing.
+
+
+(nautilus:2789): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:2789): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:2789): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:2789): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:2789): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:2789): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:2789): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:2789): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:2789): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:2789): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+** (process:2828): DEBUG: desktop-launch-listener.vala:118: ran with uri: file:///home/darealcaffeine/.ssh/id_rsa.pub
+** (process:2828): DEBUG: zeitgeist-datahub.vala:174: Inserting 1 events
+** (process:2828): DEBUG: zeitgeist-datahub.vala:174: Inserting 3 events
+** (process:2828): DEBUG: zeitgeist-datahub.vala:174: Inserting 1 events
