@@ -1,0 +1,668 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="author" content="Big Cartel, LLC - bigcartel.com" />
+	<meta name="copyright" content="Copyright (c) 2005-2009–2011 Big Cartel, LLC" />
+	<meta name="google-site-verification" content="0NRmbrYLyIGODrV5BOFNPFdtcCce2s-k0pS-gxTsm3I" />
+	<title>Big Cartel Blog</title>
+	<meta name="description" content="" />
+  <link rel="shortcut icon" href="" />
+	<link rel="alternate" type="application/rss+xml" title="Feed" href="http://blog.bigcartel.com/rss"/>
+	<link rel="stylesheet" href="http://static.tumblr.com/pjk3cr2/Cg7ljr3s3/bigcartel_tumblr.min.css" type="text/css" media="screen" />
+	<style type="text/css">
+		.centered { text-align: center; }
+.currencies_list { border-top: dashed 1px #ddd; margin-left: 0; position: relative; }
+.currencies_list li { list-style: none; border-bottom: dashed 1px #ddd; padding: 5px 0; line-height: 22px; font-size: 18px; }
+* html .currencies_list li { position: relative; }
+.currencies_list li#nok { margin-top: -16.2em; }
+.currencies_list li#brl,
+.currencies_list li#czk,
+.currencies_list li#dkk,
+.currencies_list li#huf,
+.currencies_list li#ils,
+.currencies_list li#myr,
+.currencies_list li#mxn { margin-left: 0em; }
+.currencies_list li#nok,
+.currencies_list li#php,
+.currencies_list li#pln,
+.currencies_list li#sek,
+.currencies_list li#twd,
+.currencies_list li#thb,
+.currencies_list li#try { margin-left: 250px; }
+	</style>
+	<script type="text/javascript" src="http://use.typekit.com/fvi0zab.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-86918-16']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	<!--[if lt IE 9]>
+  <script src="http://static.tumblr.com/pjk3cr2/4Hnlk0p55/ie.html5.js"></script>
+  <![endif]-->
+	<!--[if lt IE 7]>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+	<script src="http://static.tumblr.com/pjk3cr2/Iddl2f7nw/jquery.pngfix.pack.js" type="text/javascript"></script>
+	<script type="text/javascript"> 
+	    $(document).ready(function(){ 
+	        $('#content_header').pngFix(); 
+	    }); 
+	</script>
+	<![endif]-->
+<meta http-equiv="x-dns-prefetch-control" content="off"/></head>
+
+<body id="site_blog" class="site">
+	<div id="bar"></div>
+	
+	<div id="wrap" class="clearfix">
+		<div id="header">
+			<div id="logo"><a href="http://bigcartel.com">Big Cartel</a></div>
+			
+			<ul id="nav">
+				<li id="nav_tour"><a href="http://bigcartel.com/tour">Tour</a></li>
+				<li id="nav_examples"><a href="http://bigcartel.com/examples">Examples</a></li>
+				<li id="nav_buzz"><a href="http://bigcartel.com/buzz">Buzz</a></li>
+				<li id="nav_signup"><a href="http://bigcartel.com/signup">Prices &amp; Sign up</a></li>
+			</ul>
+			
+			<ul id="nav_supplement">
+				<li id="nav_help"><a href="http://help.bigcartel.com">Help</a></li>
+				<li id="nav_directory"><a href="http://directory.bigcartel.com">Store Directory</a></li>
+			</ul>
+		</div>
+		
+		<div id="content">			
+			<div id="content_header">
+				<h2><a href="/">Blog</a></h2>
+				
+				<div id="search" class="pod">
+					<form method="get" id="searchform" action="/search">
+			            <input type="text" id="s" name="q" value="" placeholder="Search blog..." />
+						<button class="button" id="btn_search" title="Search" type="submit"><span>Search</span></button>
+					</form>
+				</div>
+				
+				<div id="connect" class="pod">
+					<ul>
+						<li><a href="http://blog.bigcartel.com/rss" title="Subscribe to the blog feed" id="connect_feed">Rss</a></li>
+						<li><a href="http://meetup.com/bigcartel" title="Join us on Meetup" id="connect_meetup">Meetup</a></li>
+						<li><a href="http://www.facebook.com/bigcartel" title="Be a fan on Facebook" id="connect_facebook">Facebook</a></li>
+						<li><a href="http://twitter.com/bigcartel" title="Follow us on Twitter" id="connect_twitter">Twitter</a></li>	
+					</ul>
+				</div>
+			</div>
+	
+			<div id="blog_main">
+				 
+				<h1>Big Cartel Blog</h1>
+				
+				
+				
+				
+				
+				
+								
+                <div class="article clearfix">
+                                	
+                	<div class="article_main">
+                
+						
+						<div class="article_header">
+							<h2><a href="http://blog.bigcartel.com/post/6121582990/introducing-pagination-on-any-page" rel="bookmark">Introducing pagination on any page</a></h2>
+						</div>
+						
+					
+						
+						<div class="article_body text">
+							<p><a href="http://help.bigcartel.com/articles/19-html-api#pagination" title="Learn more about Big Cartel product pagination"><img src="http://media.tumblr.com/tumblr_lm6qptwkqD1qz4mnq.jpg" alt="Big Cartel pagination"/></a></p>
+
+<p>While it&#8217;s certainly not a huge feature, it&#8217;s one that will make some of you very happy. Last night we updated our HTML API to allow you to create product pagination on any page, not just the Products page. Now, with the help of our new <a href="http://help.bigcartel.com/articles/19-html-api#pagination">paginate</a> and <a href="http://help.bigcartel.com/articles/20-filters#default_pagination">default_paginate</a> functionality, you can create page links for your products on any page of your store!</p>
+
+<h3>Awesome! How do I create pagination on my home page?!</h3>
+
+<p>If you&#8217;d like to modify your home page to behave more like your normal products page, you can follow these steps to add pagination. However, if code changes scare you or you&#8217;ve already customized your home page, you may want to put your store in <a href="http://help.bigcartel.com/articles/13-maintenance-mode">maintenance mode</a> first, or even get the help of a <a href="http://help.bigcartel.com/articles/23-custom-theme-help">web designer</a>.</p>
+
+<ol><li>Login to the <strong>Design &gt; Pages</strong> section of your admin and click <strong>Home</strong></li>
+  <li>Click the <strong>Custom</strong> radio button</li>
+  <li>In your code, look for the part that looks like <strong>{% get products from products.all limit:theme.featured_limit order:theme.featured_order %}</strong> and change it to <strong>{% paginate products from products.all by theme.featured_limit order:theme.featured_order %}</strong></li>
+  <li>Change <strong>{% endget %}</strong> to <strong>{% endpaginate %}</strong></li>
+  <li>Finally, change <strong>{% else %}</strong> to <strong>{{ paginate | default_pagination }}{% else %}</strong></li>
+  <li>Click <strong>Save</strong> and check out your store!</li>
+</ol>
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					
+						
+
+					</div>
+					
+					<div class="article_meta">
+						<a href="http://blog.bigcartel.com/tagged/news" class="article_badge news">news</a>
+					
+                		<ul>
+							<li class="timestamp"><a href="http://blog.bigcartel.com/post/6121582990/introducing-pagination-on-any-page" title="June 2nd, 2011">3 weeks ago</a></li>
+							<li class="notes_count"><a href="http://blog.bigcartel.com/post/6121582990/introducing-pagination-on-any-page#notes">14 notes</a></li> 
+						</ul>
+                	</div>
+
+					<ul class="share_buttons">
+						
+					</ul>
+
+				</div>
+								
+                <div class="article clearfix">
+                                	
+                	<div class="article_main">
+                
+						
+						<div class="article_header">
+							<h2><a href="http://blog.bigcartel.com/post/6081727590/sup-san-francisco" rel="bookmark">Sup, San Francisco? </a></h2>
+						</div>
+						
+					
+						
+						<div class="article_body text">
+							<p><a title="Big Cartel meetup" target="_blank" href="http://www.facebook.com/event.php?eid=206688412705873"><img src="http://media.tumblr.com/tumblr_lm2pmeEnCE1qcy021.jpg"/></a></p>
+<p>Yup, Big Cartel is coming to San Francisco. We&#8217;ve had a <a title="Big Cartel-nival" target="_blank" href="http://blog.bigcartel.com/post/4785142515/thanks-to-everyone-who-came-out-last-night-big">few opportunities</a> this year to sit down and chat with fellow Big Cartel store owners and so far, the feedback has been unbelievably valuable and the new friendships—even better.</p>
+<p>Next up, San Francisco! Come talk shop with us, get some tips on selling your art online and rub elbows with other DIY store owners in your city. We&#8217;ll of course have some swag to hand out and sponsor a lucky independent seller with a store for life. Come have a drink on us and get a bit of hustle motivation while you&#8217;re there. </p>
+<p><strong>When:</strong> <a title="Big Cartel in San Francisco" target="_blank" href="http://www.facebook.com/event.php?eid=206688412705873">Tues June 7th 7pm</a></p>
+<p><strong>Where:</strong> <a title="Mission Creek Cafe" target="_blank" href="http://www.yelp.com/biz/mission-creek-cafe-san-francisco">Mission Creek Cafe </a><em><a title="Mission Creek Cafe" target="_blank" href="http://www.yelp.com/biz/mission-creek-cafe-san-francisco">(968 Valencia Street) </a></em></p>
+<p><strong>More info/RSVP:</strong> <a title="Big Cartel coming to San Francisco" target="_blank" href="http://www.facebook.com/event.php?eid=206688412705873">Facebook event</a> / <a title="San Francisco Meetup" target="_blank" href="http://www.meetup.com/bigcartel/events/20568401/">Meetup Page </a></p>
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					
+						
+
+					</div>
+					
+					<div class="article_meta">
+						<a href="http://blog.bigcartel.com/tagged/meetup" class="article_badge meetup">meetup</a>
+					
+                		<ul>
+							<li class="timestamp"><a href="http://blog.bigcartel.com/post/6081727590/sup-san-francisco" title="June 1st, 2011">4 weeks ago</a></li>
+							<li class="notes_count"><a href="http://blog.bigcartel.com/post/6081727590/sup-san-francisco#notes">7 notes</a></li> 
+						</ul>
+                	</div>
+
+					<ul class="share_buttons">
+						
+					</ul>
+
+				</div>
+								
+                <div class="article clearfix">
+                                	
+                	<div class="article_main">
+                
+						
+					
+						
+						
+						
+						
+						
+						<div class="article_body photoset">
+							<script type="text/javascript" language="javascript" src="http://assets.tumblr.com/javascript/tumblelog.js?603"></script><div id="photoset_6051242987" class="html_photoset">    <p><img src="http://30.media.tumblr.com/tumblr_lm31iaotbY1qaymqvo1_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://27.media.tumblr.com/tumblr_lm31iaotbY1qaymqvo2_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://27.media.tumblr.com/tumblr_lm31iaotbY1qaymqvo3_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://24.media.tumblr.com/tumblr_lm31iaotbY1qaymqvo4_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p></div><script type="text/javascript">    replaceIfFlash(9, "photoset_6051242987", '\x3cembed type=\x22application/x-shockwave-flash\x22 src=\x22/swf/photoset.swf\x22 bgcolor=\x22#000000\x22 quality=\x22high\x22 class=\x22photoset\x22 flashvars=\x22showLogo=false\x26amp;showVersionInfo=false\x26amp;dataFile=/post/6051242987/photoset_xml/tumblr_lm31iaotbY1qaymqv/500\x22 height=\x22500\x22 width=\x22500\x22\x3e\x3c/embed\x3e')</script>
+							<p><p>&#8220;The United Plates&#8221; &amp; &#8220;Us Presidents&#8221; are two illustration projects from designer/illustrator <a title="John Holcomb" target="_blank" href="http://www.shorthandedstudio.com/about/">Jon Holcomb</a>. In &#8220;The United Plates&#8221;, he uses a colorful, naive style to give a tongue-in-cheek perspective on the humorous quirks of all 50 states.  </p>
+<p>Check out the other projects and the shop here: <a title="Shorthanded Shop on Big Cartel" target="_blank" href="http://shop.shorthandedstudio.com/">shop.shorthandedstudio.com</a></p></p>
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					
+						
+
+					</div>
+					
+					<div class="article_meta">
+						<a href="http://blog.bigcartel.com/tagged/showcase" class="article_badge showcase">showcase</a>
+					
+                		<ul>
+							<li class="timestamp"><a href="http://blog.bigcartel.com/post/6051242987/the-united-plates-us-presidents-are-two" title="May 31st, 2011">4 weeks ago</a></li>
+							<li class="notes_count"><a href="http://blog.bigcartel.com/post/6051242987/the-united-plates-us-presidents-are-two#notes">1 note</a></li> 
+						</ul>
+                	</div>
+
+					<ul class="share_buttons">
+						
+					</ul>
+
+				</div>
+								
+                <div class="article clearfix">
+                                	
+                	<div class="article_main">
+                
+						
+						<div class="article_header">
+							<h2><a href="http://blog.bigcartel.com/post/5905124295/featured-store-friday-vintage" rel="bookmark">Featured Store Friday: Vintage</a></h2>
+						</div>
+						
+					
+						
+						<div class="article_body text">
+							<h3>Winter&#8217;s Moon</h3>
+<p><a title="Winter's Moon on Big Cartel" target="_blank" href="http://wintersmoon.bigcartel.com/products">wintersmoon.bigcartel.com</a></p>
+<p><a title="Winter's Moon on Big Cartel" target="_blank" href="http://wintersmoon.bigcartel.com/"><img src="http://media.tumblr.com/tumblr_llugc8Z5uL1qcy021.jpg"/></a></p>
+<p>Julia Grant and Becky Joy are self-confessed magpies with houses too small to accommodate all the treasures they accumulate. And so was born their business <a title="Winter's Moon on Big Cartel" target="_blank" href="http://wintersmoon.bigcartel.com/">Winter’s Moon</a>, named after Becky&#8217;s house as the first venture was open house sales, the website launched in 2009.</p>
+<p><a title="Winter's Moon on Big Cartel" target="_blank" href="http://wintersmoon.bigcartel.com/"><img src="http://media.tumblr.com/tumblr_llugdf2J5j1qcy021.jpg"/></a></p>
+<p>Vintage makes sense to them, as it’s the perfect antidote to high street mass production. Winter&#8217;s Moon finds are often unique, quirky, with a history and have stood the test of time as they were built to last.</p>
+<p><a title="Winter's Moon on Big Cartel" target="_blank" href="http://wintersmoon.bigcartel.com/"><img src="http://media.tumblr.com/tumblr_llugejf7hK1qcy021.jpg"/></a></p>
+<h3></h3>
+<h3>KYC Vintage</h3>
+<p><a title="KYC Vintage on Big Cartel" target="_blank" href="http://kycvintage.bigcartel.com/">kycvintage.bigcartel.com</a></p>
+<p><a title="KYC Vintage on Big Cartel" target="_blank" href="http://kycvintage.bigcartel.com/"><img src="http://media.tumblr.com/tumblr_llugnwlMpK1qcy021.png"/></a></p>
+<p>An almost secret treasure chest of classic brands, <a title="KYC Vintage on Big Cartel" target="_blank" href="http://kycvintage.bigcartel.com/">KYC Vintage</a> is like a perfectly curated collection of cool kid&#8217;s closets, frozen in time and opened up just for you. These guys are so good at perfect, vintage-fashion finds, it&#8217;s probably ok to spread the word— they&#8217;ll keep finding the good stuff.</p>
+<p><a title="KYC Vintage on Big Cartel" target="_blank" href="http://kycvintage.bigcartel.com/"><img src="http://media.tumblr.com/tumblr_llugqsBrwN1qcy021.jpg"/></a></p>
+<p><a title="KYC Vintage on Big Cartel" target="_blank" href="http://kycvintage.bigcartel.com/"><img src="http://media.tumblr.com/tumblr_llugriI6B21qcy021.jpg"/></a></p>
+<h3></h3>
+<h3>BackGarage</h3>
+<p><a title="BackGarage on Big Cartel" target="_blank" href="http://backgarage.bigcartel.com/">backgarage.bigcartel.com</a></p>
+<p><a title="BackGarage on Big Cartel" target="_blank" href="http://backgarage.bigcartel.com/"><img src="http://media.tumblr.com/tumblr_llugv0rcay1qcy021.jpg"/></a></p>
+<p>BackGarage currently operate out of an apartment and garage space in Albany Park. A perfect eye for that evocative, nostalgic piece and an irritating stroke of lucky finds makes this shop a vintage fan&#8217;s paradise. All of their items are vintage, sourced from estate sales, auctions, thrift stores, junk shops, and antique stores all over the Midwest.</p>
+<p><a title="BackGarage on Big Cartel" target="_blank" href="http://backgarage.bigcartel.com/"><img src="http://media.tumblr.com/tumblr_lluh0aEiTN1qcy021.jpg"/></a><a title="BackGarage on Big Cartel" target="_blank" href="http://backgarage.bigcartel.com/"><img src="http://media.tumblr.com/tumblr_lluh16Pg1j1qcy021.jpg"/></a><a title="BackGarage on Big Cartel" target="_blank" href="http://backgarage.bigcartel.com/"><img src="http://media.tumblr.com/tumblr_lluh20n4jc1qcy021.jpg"/></a></p>
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					
+						
+
+					</div>
+					
+					<div class="article_meta">
+						<a href="http://blog.bigcartel.com/tagged/featured_store_friday" class="article_badge featured_store_friday">featured store friday</a>
+					
+                		<ul>
+							<li class="timestamp"><a href="http://blog.bigcartel.com/post/5905124295/featured-store-friday-vintage" title="May 27th, 2011">1 month ago</a></li>
+							<li class="notes_count"><a href="http://blog.bigcartel.com/post/5905124295/featured-store-friday-vintage#notes">2 notes</a></li> 
+						</ul>
+                	</div>
+
+					<ul class="share_buttons">
+						
+					</ul>
+
+				</div>
+								
+                <div class="article clearfix">
+                                	
+                	<div class="article_main">
+                
+						
+					
+						
+						
+						
+						
+						
+						<div class="article_body photoset">
+							<div id="photoset_5808541381" class="html_photoset">    <p><img src="http://29.media.tumblr.com/tumblr_llpvbs9uhg1qaymqvo1_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://28.media.tumblr.com/tumblr_llpvbs9uhg1qaymqvo2_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://28.media.tumblr.com/tumblr_llpvbs9uhg1qaymqvo3_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://27.media.tumblr.com/tumblr_llpvbs9uhg1qaymqvo4_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://29.media.tumblr.com/tumblr_llpvbs9uhg1qaymqvo5_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://30.media.tumblr.com/tumblr_llpvbs9uhg1qaymqvo6_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://27.media.tumblr.com/tumblr_llpvbs9uhg1qaymqvo7_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://28.media.tumblr.com/tumblr_llpvbs9uhg1qaymqvo8_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p></div><script type="text/javascript">    replaceIfFlash(9, "photoset_5808541381", '\x3cembed type=\x22application/x-shockwave-flash\x22 src=\x22/swf/photoset.swf\x22 bgcolor=\x22#000000\x22 quality=\x22high\x22 class=\x22photoset\x22 flashvars=\x22showLogo=false\x26amp;showVersionInfo=false\x26amp;dataFile=/post/5808541381/photoset_xml/tumblr_llpvbs9uhg1qaymqv/500\x22 height=\x22650\x22 width=\x22500\x22\x3e\x3c/embed\x3e')</script>
+							<p><p><a title="Neighborhood Studio on Big Cartel" target="_blank" href="http://www.neighborhood-studio.com/">Neighborhood Studio</a> has taken lyrics from some of the most powerful 80&#8217;s ballads and created motivational, typographic mantras. </p>
+<p>Check out the shop here: <a title="Neighborhood Studio on Big Cartel" target="_blank" href="http://www.neighborhood-studio.com/">neighborhood-studio.com</a></p></p>
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					
+						
+
+					</div>
+					
+					<div class="article_meta">
+						<a href="http://blog.bigcartel.com/tagged/showcase" class="article_badge showcase">showcase</a>
+					
+                		<ul>
+							<li class="timestamp"><a href="http://blog.bigcartel.com/post/5808541381/neighborhood-studio-has-taken-lyrics-from-some-of" title="May 24th, 2011">1 month ago</a></li>
+							<li class="notes_count"><a href="http://blog.bigcartel.com/post/5808541381/neighborhood-studio-has-taken-lyrics-from-some-of#notes">4 notes</a></li> 
+						</ul>
+                	</div>
+
+					<ul class="share_buttons">
+						
+					</ul>
+
+				</div>
+								
+                <div class="article clearfix">
+                                	
+                	<div class="article_main">
+                
+						
+						<div class="article_header">
+							<h2><a href="http://blog.bigcartel.com/post/5676965792/featured-store-friday-dkng-studios" rel="bookmark">Featured Store Friday: DKNG Studios</a></h2>
+						</div>
+						
+					
+						
+						<div class="article_body text">
+							<p><a title="DKNG Studios on Big Cartel" target="_blank" href="http://store.dkngstudios.com/"><img src="http://media.tumblr.com/tumblr_llik117hfc1qcy021.jpg"/></a></p>
+<p><a title="DKNG Studios on Big Cartel" target="_blank" href="http://store.dkngstudios.com/"><img src="http://media.tumblr.com/tumblr_llik20v6a41qcy021.jpg"/></a></p>
+<p class="centered">Peep the shop at: <a title="DKNG Studios on Big Cartel" target="_blank" href="http://store.dkngstudios.com/">store.dkngstudios.com</a></p>
+<h3>BC: Who is behind DKNG studios and how did you guys get started?</h3>
+<p><strong>DK:</strong> <a title="DKNG Studios" target="_blank" href="http://dkngstudios.com/">DKNG Studios</a> was founded by Dan Kuhlken (myself) and Nathan Goldman. We began our creative collaboration in high school. We met on the track team and eventually formed a band. Nathan played drums and I played guitar. We eventually went to separate colleges and it became increasingly difficult to play music together. Since we were also both interested in art and design I asked Nathan if he would be interested in creating art together.</p>
+<p><a title="DKNG Studios on Big Cartel" target="_blank" href="http://store.dkngstudios.com/"><img src="http://media.tumblr.com/tumblr_llik3ru3sP1qcy021.jpg"/></a></p>
+<h3>BC: As a team, do you have specific roles or a process to your collaboration?</h3>
+<p><strong>DK:</strong> In a nut shell, I create the majority of the illustrations and Nathan creates the majority of the typography. Together we will work on the graphic design and art direct the project. We will also spend a good amount of time together brainstorming concepts. Once we are both excited about a solid idea that&#8217;s when we assign each other specific roles.</p>
+<p><a title="DKNG Studios on Big Cartel" target="_blank" href="http://store.dkngstudios.com/"><img src="http://media.tumblr.com/tumblr_lliknk2Z1c1qcy021.jpg"/></a></p>
+<h3>BC: What was your first project together? How did you connect with your first few clients?</h3>
+<p><strong>DK:</strong> We submitted poster designs to <a title="The Troubadour" target="_blank" href="http://www.troubadour.com/">The Troubadour</a>, the famous LA music venue, and they dug our work. For a couple years after that we continued to create poster art for them. As our portfolio grew, so did the interest of other clients.</p>
+<p><a title="DKNG Studios on Big Cartel" target="_blank" href="http://store.dkngstudios.com/"><img src="http://media.tumblr.com/tumblr_lliklyWS9P1qcy021.jpg"/></a></p>
+<h3>BC: Can you explain your process on something like the Aziz Ansari(LA) poster?</h3>
+<p><strong>DK:</strong> For this poster, like many of our posters, we submitted 3 ideas in the form of sketches and descriptions for the client(<a title="Aziz Ansari" target="_blank" href="http://azizisbored.tumblr.com/">Aziz Ansari</a>) to select from. Once a final idea was decided upon, we began creating the artwork in Illustrator. For a style like this we usually don&#8217;t need to hand draw any of the elements since a majority of them are geometric forms. Other elements like the wood grain on the table and the smoke coming out of the cigar were black and white photo images that were bitmapped in Photoshop and then imported into Illustrator.</p>
+<p><a title="DKNG Studios on Big Cartel" target="_blank" href="http://store.dkngstudios.com/"><img src="http://media.tumblr.com/tumblr_llikkpll4F1qcy021.jpg"/></a></p>
+<p>The color separations for this file were a fun addition to the design process. The only inks that were printed were teal, black and red (in that order). The brown of the table was created by the red ink overlaying the black ink. To create the dark red, which can be seen in the carpet, we overlaid the red ink over the teal ink. You can see the teal ink peeking through the letter forms of Aziz&#8217;s name as an example.</p>
+<h3>BC: If you could have designed any album cover for any band living or dead what would it be?</h3>
+<p><strong>DK:</strong> Living? I think we can both agree on <a title="Radiohead" target="_blank" href="http://www.radiohead.com/">Radiohead</a>. Dead however, that&#8217;s a tough one. For me personally I would probably choose someone like Jimi Hendrix. Nathan would probably choose James Brown or The Meters.</p>
+<p><a title="DKNG Studios on Big Cartel" target="_blank" href="http://store.dkngstudios.com/"><img src="http://media.tumblr.com/tumblr_llikobaul01qcy021.jpg"/></a></p>
+<h3>BC: How has your experience been selling online and why Big Cartel?</h3>
+<p><strong>DK:</strong> It&#8217;s been awesome. It&#8217;s really perfect for our type of business. What sold us was being able to create a custom interface and functionality design that would match our site, while still having a simple backend interface that would keep all our sales and inventory organized.</p>
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					
+						
+
+					</div>
+					
+					<div class="article_meta">
+						<a href="http://blog.bigcartel.com/tagged/featured_store_friday" class="article_badge featured_store_friday">featured store friday</a>
+					
+                		<ul>
+							<li class="timestamp"><a href="http://blog.bigcartel.com/post/5676965792/featured-store-friday-dkng-studios" title="May 20th, 2011">1 month ago</a></li>
+							<li class="notes_count"><a href="http://blog.bigcartel.com/post/5676965792/featured-store-friday-dkng-studios#notes">4 notes</a></li> 
+						</ul>
+                	</div>
+
+					<ul class="share_buttons">
+						
+					</ul>
+
+				</div>
+								
+                <div class="article clearfix">
+                                	
+                	<div class="article_main">
+                
+						
+					
+						
+						
+						
+						
+						
+						<div class="article_body photoset">
+							<div id="photoset_5643985813" class="html_photoset">    <p><img src="http://27.media.tumblr.com/tumblr_llgjbeJgbL1qaymqvo7_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://24.media.tumblr.com/tumblr_llgjbeJgbL1qaymqvo1_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://27.media.tumblr.com/tumblr_llgjbeJgbL1qaymqvo2_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://25.media.tumblr.com/tumblr_llgjbeJgbL1qaymqvo3_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://25.media.tumblr.com/tumblr_llgjbeJgbL1qaymqvo4_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://24.media.tumblr.com/tumblr_llgjbeJgbL1qaymqvo5_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://28.media.tumblr.com/tumblr_llgjbeJgbL1qaymqvo6_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://25.media.tumblr.com/tumblr_llgjbeJgbL1qaymqvo8_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p></div><script type="text/javascript">    replaceIfFlash(9, "photoset_5643985813", '\x3cembed type=\x22application/x-shockwave-flash\x22 src=\x22/swf/photoset.swf\x22 bgcolor=\x22#000000\x22 quality=\x22high\x22 class=\x22photoset\x22 flashvars=\x22showLogo=false\x26amp;showVersionInfo=false\x26amp;dataFile=/post/5643985813/photoset_xml/tumblr_llgjbeJgbL1qaymqv/500\x22 height=\x22500\x22 width=\x22500\x22\x3e\x3c/embed\x3e')</script>
+							<p><p>Lazerwood etches precision patterns and illustrations into natural, warm, wood veneers to &#8220;classy up&#8221; that iPhone. Check out the shop at: <a title="Lazerwood on Big Cartel" target="_blank" href="http://lazerwood.bigcartel.com/">lazerwood.bigcartel.com</a></p></p>
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					
+						
+
+					</div>
+					
+					<div class="article_meta">
+						<a href="http://blog.bigcartel.com/tagged/showcase" class="article_badge showcase">showcase</a>
+					
+                		<ul>
+							<li class="timestamp"><a href="http://blog.bigcartel.com/post/5643985813/lazerwood-etches-precision-patterns-and" title="May 19th, 2011">1 month ago</a></li>
+							<li class="notes_count"><a href="http://blog.bigcartel.com/post/5643985813/lazerwood-etches-precision-patterns-and#notes">11 notes</a></li> 
+						</ul>
+                	</div>
+
+					<ul class="share_buttons">
+						
+					</ul>
+
+				</div>
+								
+                <div class="article clearfix">
+                                	
+                	<div class="article_main">
+                
+						
+						<div class="article_header">
+							<h2><a href="http://blog.bigcartel.com/post/5610914046/new-admin-navigation" rel="bookmark">New admin navigation</a></h2>
+						</div>
+						
+					
+						
+						<div class="article_body text">
+							<p><img src="http://media.tumblr.com/tumblr_llek97fHLh1qcy021.jpg"/></p>
+<p>As you may have already noticed, your store&#8217;s admin area got a fresh coat of paint last night. We focused on the navigation area up top, and the new design isn’t just better looking (okay, we&#8217;re a little biased), but now gives you a way to go directly to some of the pages that used to take two clicks.</p>
+<p>We&#8217;ve also made a few other subtle refinements here and there in preparation for some of the big things we have on deck. It&#8217;s going to be an awesome summer.</p>
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					
+						
+
+					</div>
+					
+					<div class="article_meta">
+						<a href="http://blog.bigcartel.com/tagged/news" class="article_badge news">news</a>
+					
+                		<ul>
+							<li class="timestamp"><a href="http://blog.bigcartel.com/post/5610914046/new-admin-navigation" title="May 18th, 2011">1 month ago</a></li>
+							<li class="notes_count"><a href="http://blog.bigcartel.com/post/5610914046/new-admin-navigation#notes">9 notes</a></li> 
+						</ul>
+                	</div>
+
+					<ul class="share_buttons">
+						
+					</ul>
+
+				</div>
+								
+                <div class="article clearfix">
+                                	
+                	<div class="article_main">
+                
+						
+					
+						
+						
+						
+						
+						
+						<div class="article_body photoset">
+							<div id="photoset_5552990868" class="html_photoset">    <p><img src="http://30.media.tumblr.com/tumblr_llb1yu7eze1qaymqvo1_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://24.media.tumblr.com/tumblr_llb1yu7eze1qaymqvo2_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://25.media.tumblr.com/tumblr_llb1yu7eze1qaymqvo3_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://24.media.tumblr.com/tumblr_llb1yu7eze1qaymqvo4_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://30.media.tumblr.com/tumblr_llb1yu7eze1qaymqvo5_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://29.media.tumblr.com/tumblr_llb1yu7eze1qaymqvo6_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://27.media.tumblr.com/tumblr_llb1yu7eze1qaymqvo7_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p><p><img src="http://30.media.tumblr.com/tumblr_llb1yu7eze1qaymqvo8_500.jpg" alt="" class="photoset_photo"/></p><p class="photoset_caption"></p></div><script type="text/javascript">    replaceIfFlash(9, "photoset_5552990868", '\x3cembed type=\x22application/x-shockwave-flash\x22 src=\x22/swf/photoset.swf\x22 bgcolor=\x22#000000\x22 quality=\x22high\x22 class=\x22photoset\x22 flashvars=\x22showLogo=false\x26amp;showVersionInfo=false\x26amp;dataFile=/post/5552990868/photoset_xml/tumblr_llb1yu7eze1qaymqv/500\x22 height=\x22500\x22 width=\x22500\x22\x3e\x3c/embed\x3e')</script>
+							<p><p>Last week our boy Dan, spent a few days traveling through the american southwest down to <a title="San Felipe" target="_blank" href="http://www.sanfelipe.com.mx/">San Felipe, Mexico</a> to attend the <a title="El Diablo Run" target="_blank" href="http://eldiablorun.blogspot.com/">El Diablo Run</a>. It was a really cool experience talking motorcycles with a group of enthusiasts who take a lot of pride in crafting custom bike parts and celebrating the culture around the freedom of 2 wheels.</p>
+<p>The enthusiasts who rallied down through miles of dirt roads and construction were looking for a few days of the simple life. Good food, perfect weather and a way to slow things down a little bit. It seemed absolutely fitting that a lot of these DIY, moto brands utilize Big Cartel as a simple shopping cart for their quality parts and apparel.</p>
+<p>Check out a few of the shops we met down there and shared a few fish tacos with.</p>
+<p>Pangea Speed: <a href="http://store.pangeaspeed.com/">store.pangeaspeed.com</a></p>
+<p>Bolts Action: <a href="http://boltsaction.bigcartel.com/">boltsaction.bigcartel.com</a></p>
+<p>Old Gold Garage Co. <a href="http://oldgoldgarageco.bigcartel.com/">oldgoldgarageco.bigcartel.com</a></p>
+<p>Church of Choppers: <a href="http://www.churchofchoppers.bigcartel.com/"><a href="http://www.churchofchoppers.bigcartel.com">www.churchofchoppers.bigcartel.com</a></a></p></p>
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					
+						
+
+					</div>
+					
+					<div class="article_meta">
+						<a href="http://blog.bigcartel.com/tagged/showcase" class="article_badge showcase">showcase</a>
+					
+                		<ul>
+							<li class="timestamp"><a href="http://blog.bigcartel.com/post/5552990868/last-week-our-boy-dan-spent-a-few-days-traveling" title="May 16th, 2011">1 month ago</a></li>
+							<li class="notes_count"><a href="http://blog.bigcartel.com/post/5552990868/last-week-our-boy-dan-spent-a-few-days-traveling#notes">6 notes</a></li> 
+						</ul>
+                	</div>
+
+					<ul class="share_buttons">
+						
+					</ul>
+
+				</div>
+								
+                <div class="article clearfix">
+                                	
+                	<div class="article_main">
+                
+						
+						<div class="article_header">
+							<h2><a href="http://blog.bigcartel.com/post/5462158917/the-absolutely-incomparable-olly-moss" rel="bookmark">The absolutely incomparable Olly Moss </a></h2>
+						</div>
+						
+					
+						
+						<div class="article_body text">
+							<iframe src="http://player.vimeo.com/video/23621548?title=0&amp;byline=0&amp;portrait=0&amp;color=c1d961" width="500" height="281" frameborder="0"></iframe>
+<p><a title="Olly Moss" target="_blank" href="http://www.ollymoss.com/">Olly Moss</a> makes perfect visual expression look so easy. Which, when you try distilling some emotional concept down into a striking image, you realize it&#8217;s not easy at all. His recent show at Gallery 1988 takes this idea to another level and gives fans of every era of pop culture a reason to wish they had waited in line for one of these pieces.</p>
+<p><a title="Olly Moss on Big Cartel" target="_blank" href="http://ollymoss.bigcartel.com/"><img src="http://media.tumblr.com/tumblr_ll5nvzklFE1qcy021.jpg"/></a></p>
+<p>Luckily, Olly has a store with a few gems that those of us who didn&#8217;t wait in line overnight, can still purchase. Check out the shop at: <a title="Olly Moss on Big Cartel" target="_blank" href="http://ollymoss.bigcartel.com/">ollymoss.bigcartel.com</a></p>
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					
+						
+
+					</div>
+					
+					<div class="article_meta">
+						<a href="http://blog.bigcartel.com/tagged/showcase" class="article_badge showcase">showcase</a>
+					
+                		<ul>
+							<li class="timestamp"><a href="http://blog.bigcartel.com/post/5462158917/the-absolutely-incomparable-olly-moss" title="May 13th, 2011">1 month ago</a></li>
+							<li class="notes_count"><a href="http://blog.bigcartel.com/post/5462158917/the-absolutely-incomparable-olly-moss#notes">9 notes</a></li> 
+						</ul>
+                	</div>
+
+					<ul class="share_buttons">
+						
+					</ul>
+
+				</div>
+				
+								
+				
+
+				
+			    <ul id="pagination">
+					<li id="newer_entries"><a href="/page/1">Newer Entries</a></li>
+					<li id="older_entries"><a href="/page/3">Older Entries</a></li>        
+			    </ul>
+				
+			</div>
+		</div>
+
+		<div id="footer">
+			<p id="copyright">&copy; 2011 Big Cartel, LLC</p>
+			<ul id="footer_menu">
+			  <li><a href="http://bigcartel.com/about">About</a></li>
+				<li><a href="http://blog.bigcartel.com">Blog</a></li>
+				<li><a href="http://twitter.com/bigcartel">Twitter</a></li>
+				<li><a href="http://bigcartel.com/agreement">Legal</a></li>
+				<li><a href="http://help.bigcartel.com/contact">Contact</a></li>
+				<li><a href="http://bigcartel.com/login">Login</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<script src="http://cdn.sublimevideo.net/js/0q3dxsq5.js" type="text/javascript"></script>
+  <script src="http://videos.bigcartel.com/stats.js" type="text/javascript"></script>
+<!-- BEGIN TUMBLR CODE --><iframe src="http://assets.tumblr.com/iframe.html?9&src=http%3A%2F%2Fblog.bigcartel.com%2Fpage%2F2&amp;lang=en_US&amp;name=bigcartel" scrolling="no" width="330" height="25" frameborder="0" style="position:absolute; z-index:1337; top:0px; right:0px; border:0px; background-color:transparent; overflow:hidden;" id="tumblr_controls"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('tumblr_controls').allowTransparency=true;</script><![endif]--><script type="text/javascript">_qoptions={qacct:"p-19UtqE8ngoZbM"};</script><script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script><noscript><img src="http://pixel.quantserve.com/pixel/p-19UtqE8ngoZbM.gif" style="display:none; border-width:0px; height:1px; width:1px;" alt=""/></noscript><!-- END TUMBLR CODE --></body>
+</html>

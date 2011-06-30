@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+ENV['GEM_HOME']=ENV['GEM_HOME'] || '/home/darealcaffeine/.rvm/gems/ruby-1.9.2-p0'
+ENV['GEM_PATH']=ENV['GEM_PATH'] || '/home/darealcaffeine/.rvm/gems/ruby-1.9.2-p0:/home/darealcaffeine/.rvm/gems/ruby-1.9.2-p0@global'
+ENV['PATH']='/home/darealcaffeine/.rvm/gems/ruby-1.9.2-p0/bin:/home/darealcaffeine/.rvm/gems/ruby-1.9.2-p0@global/bin:/home/darealcaffeine/.rvm/rubies/ruby-1.9.2-p0/bin:' + ENV['PATH']
+ENV['BUNDLE_PATH']=ENV['BUNDLE_PATH'] || '/home/darealcaffeine/.rvm/gems/ruby-1.9.2-p0'
+
+
+require 'rdoc/ri/driver'
+
+RDoc::RI::Driver.run ARGV

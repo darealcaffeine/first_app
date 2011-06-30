@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+system="$(uname)"
+item="$(tput setaf 2)* $(tput sgr0)"
+
+if [[ "Linux" = "$system" ]] ; then
+  for file in /etc/*-release ; do
+    release="( $(cat $file) )" ; break
+  done
+  printf "\n\n$(tput setaf 2)Notes for ${system} $release$(tput sgr0)\n"
+
+  rvm_aptitude_binary="$(command -v aptitude)"
+  rvm_emerge_binary="$(command -v emerge)"
+  rvm_pacman_binary="$(command -v pacman)"
+  rvm_yum_binary="$(command -v yum)"
+
+  printf "\n    $item NOTE: MRI stands for Matz's Ruby Interpreter (1.8.X, 1.9.X), ree stands for Ruby Enterprise Edition and rbx stands for Rubinius.\n\n"
+  printf "\n    $item curl is required.\n"
+  printf "\n    $item patch is required (for ree, some ruby head's).\n"
+  printf "\n    $item If you wish to install rbx and/or any MRI head (eg. 1.9.2-head) then you must install and use rvm 1.8.7 first.\n"
+
+  if [[ ! -z "$rvm_aptitude_binary" ]] ; then
+    printf "\n    $item For JRuby (if you wish to use it) you will need:"
+    printf "\n       $ aptitude install curl sun-java6-bin sun-java6-jre sun-java6-jdk"
+
+    printf "\n    $item For MRI & ree (if you wish to use it) you will need (depending on what you are installing):"
+    printf "\n       $ aptitude install build-essential bison openssl libreadline5 libreadline-dev curl git-core zlib1g zlib1g-dev libssl-dev vim libsqlite3-0 libsqlite3-dev sqlite3 libreadline-dev libxml2-dev git-core subversion autoconf"
+
+    printf "\n    $item For IronRuby (if you wish to use it) you will need:"
+    printf "\n       $ aptitude install curl mono-2.0-devel"
+
+  elif [[ ! -z "$rvm_emerge_binary" ]] ; then
+    printf "\n    $item For JRuby (if you wish to use it) you will need:"
+    printf "\n       $ emerge dev-java/sun-jdk dev-java/sun-jre-bin"
+
+    printf "\n    $item For IronRuby (if you wish to use it) you will need:"
+    printf "\n       $ emerge dev-lang/mono"
+
+  elif [[ ! -z "$rvm_pacman_binary" ]] ; then
+    printf "\n    $item For MRI based rubies you will need:"
+    printf "\n       $ pacman -Sy autoconf diffutils patch curl bison zlib readline libxml2 git"
+
+    printf "\n    $item For JRuby (if you wish to use it) you will need:"
+    printf "\n       $ pacman -Sy jdk jre curl"
+
+    printf "\n    $item For IronRuby (if you wish to use it) you will need:"
+    printf "\n       $ pacman -Sy mono"
+
+  elif [[ ! -z "$rvm_yum_binary" ]] ; then
+    printf "\n    $item For MRI/ree (if you wish to use it) you will need:"
+    printf "\n       $ yum install -y gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel"
+    printf "\n       $ yum install -y iconv-devel # NOTE: For centos 5.4 final iconv-devel might not be available :("
+
+    printf "\n    $item For JRuby (if you wish to use it) you will need:"
+    printf "\n       $ yum install -y java"
+
+  else
+    printf "\n    $item For JRuby (if you wish to use it) you will need:"
+    printf "\n      The SUN java runtime environment and development kit."
+    printf "\n    $item For IronRuby (if you wish to use it) you will need:"
+    printf "\n      The Mono Runtime and Development Platform (version 2.6 or greater is recommended)."
+  fi
+elif [[ "Darwin" = "$system"  ]] ; then
+  release="( $(sw_vers -productName) )"
+  printf "\n$(tput setaf 2)Notes for ${system} $release $(tput sgr0)\n"
+  printf "\n    $item For Snow Leopard be sure to have XCode Tools Version 3.2.1 (1613) or later (there were bugs with the dvd release version)."
+  printf "\n    $item You should download the latest XCode tools from developer.apple.com. This is necessary since the dvd install for Snow Leopard has bugs."
+  printf "\n    $item If you intend on installing MacRuby you must install LLVM first."
+  printf "\n    $item If you intend on installing JRuby you must install the JDK."
+  printf "\n    $item If you intend on installing IronRuby you must install Mono (version 2.6 or greater is recommended)."
+fi
+
+echo
+

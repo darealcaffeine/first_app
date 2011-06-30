@@ -1,0 +1,805 @@
+var UP = {};
+
+(function(context) {
+	
+	jQuery(document).ready(function() {
+		context.nav.init();
+		context.countdown.init();		
+		context.product.init();
+		context.cartpage.init();
+		context.signup.init();
+	});
+	
+	context.settings = {
+		deadline: new Date("July 8, 2011 10:00 EST"),
+		frame: (jQuery.browser.webkit) ? 'body' : 'html',
+		fixed_position_supported: true
+	};
+	
+	context.data = {
+		digits: {
+			days: [0,0],
+			hours: [0,0],
+			minutes: [0,0],
+			seconds: [0,0]
+		},
+		laps: {
+			days: [0,0],
+			hours: [0,0],
+			minutes: [0,0],
+			seconds: [0,0]
+		},
+		time_left: true,
+		cart: {}
+	};
+	
+	context.api = {
+		send: function(action, params, callback, options) {
+			var self = this;
+			
+			var options = options || {};
+			options.parameters = params;
+			
+			jQuery.ajax({
+				type: "POST",
+				url: '/' + action + '.js',
+				data: options.parameters,
+				success: function(result){
+					try {
+						result = jQuery.parseJSON(result);
+						
+						jQuery(".error ul").empty();
+						
+						if (result.errors) {
+							self.onError(result.errors);
+						}
+						else {
+							callback(result);						
+						}
+					} catch(error) {
+						self.onError(["Something went wrong. Please try again in a bit."]);
+					}
+				},
+				error: function() {
+					// Ajax error
+				}
+			 });			
+		},
+		onError: function(errors) {
+			jQuery(errors).each(function(index, value) {
+				jQuery(".error ul").append("<li>" + value + "</li>");
+			});
+		}
+	};
+	
+	context.cart = {
+		refresh: function(callback, options) {
+			context.api.send('cart', {}, callback, options);
+		},
+		updateFromForm: function(formID, callback, options) {
+			var form_el = jQuery("#" + formID);
+			context.api.send('cart', jQuery(form_el).serialize(), callback, options);
+		},
+		addItem: function(optionID, quantity, callback, options) {
+			var params = {};
+			params['cart[add][id]'] = optionID;
+			params['cart[add][quantity]'] = quantity || 1;
+			context.api.send('cart', params, callback, options);
+		},
+		updateItem: function(id, quantity, callback, options) {
+			var params = {};
+			params['cart[update][' + id + ']'] = quantity;
+			context.api.send('cart', params, callback, options);
+		},
+		removeItem: function(id, callback, options) {
+			this.updateItem(id, 0, callback, options);
+		}
+	};
+	
+	context.format = {
+		money: function(n, withCommas) {
+			n = parseFloat(n);
+			n -= 0;
+			n = (Math.round(n*100))/100;
+			n = (n == Math.floor(n)) ? n + '.00' : ((n*10 == Math.floor(n*10)) ? n + '0' : n);
+			return withCommas ? this.commas(n) : n;
+		},
+		commas: function(n) {
+			var x = n.toString().split('.');
+			var x1 = x[0];
+			var x2 = x.length > 1 ? '.' + x[1] : '';
+			var rgx = /(\d+)(\d{3})/;
+			
+			while(rgx.test(x1)) {
+				x1 = x1.replace(rgx, '$1' + ',' + '$2');
+			}
+			
+			return x1 + x2;
+		}
+	};
+	
+	
+	context.nav = {
+		init: function() {
+			var self = this;
+			
+			if (jQuery(".home-page").size() > 0) {
+				// Update nav on page load
+				self.check_position_fixed();
+				self.capture_nav_clicks();
+				self.watch_scroll();
+			}
+		},
+		check_position_fixed: function() { 
+					
+			var container = document.body;
+			
+			if (document.createElement && container && container.appendChild && container.removeChild) {
+				var el = document.createElement('div');
+				
+				if (!el.getBoundingClientRect) return null;				
+				
+				el.innerHTML = 'x';
+				el.style.cssText = 'position:fixed;top:100px;';
+				container.appendChild(el);
+			
+				var originalHeight = container.style.height,
+					originalScrollTop = container.scrollTop;
+			
+				container.style.height = '3000px';
+				container.scrollTop = 500;
+			
+				var elementTop = el.getBoundingClientRect().top;
+				container.style.height = originalHeight;
+				
+				var isSupported = (elementTop === 100);
+				container.removeChild(el);
+				container.scrollTop = originalScrollTop;
+			
+				context.settings.fixed_position_supported = isSupported;
+			}			
+		},
+		capture_nav_clicks: function() {
+			var self = this;
+			
+			jQuery("nav a").click(function(event) {
+				
+				/* Not necessary
+				if (context.settings.fixed_position_supported == false) {
+					self.set_active(this);
+				}
+				*/
+				
+				var href = jQuery(this).attr("href");
+				var id = href.split("#");
+				
+				self.slide_page(id[1]);
+				self.update_location(id[1]);
+				
+				event.preventDefault();
+			});
+			
+		},
+		watch_scroll: function() {	
+		
+			if (context.settings.fixed_position_supported) {
+				var self = this;
+				
+				var possibles = jQuery("nav a");
+				var sections = [];
+				
+				jQuery(possibles).each(function() {
+					var section = {};
+					
+					var href = jQuery(this).attr("href");
+			
+					// strip stuff before hash
+					var href = href.split("#");
+					
+					section.id = href[1];
+					section.offset = jQuery("#" + section.id).offset();
+					
+					sections.push(section);
+				});
+				
+				var buffer = jQuery(window).height() / 3;
+	
+				jQuery(document).everyTime(100, "scroll", function() {
+					
+					var scroll_top = jQuery(context.settings.frame).scrollTop();
+					var target;
+					var last = jQuery(sections).size() - 1;
+					
+					jQuery(sections).each(function(index, section) {
+						// If we've scrolled past the beginning of the zone
+						if ( scroll_top > (sections[index].offset.top - buffer) ) {
+							// But not into the next zone
+							if (
+								scroll_top > (sections[last].offset.top - buffer)
+								||
+								scroll_top < (sections[index + 1].offset.top - buffer)
+							) 
+							{
+								target = jQuery("#" + section.id + "-link");
+							}
+						}
+					});
+					
+					self.set_active(target);
+				});
+			}
+		},
+		set_active: function(el) {
+			jQuery("aside nav .active").removeClass("active");
+			jQuery(el).addClass("active");
+		},
+		slide_page: function(target) {
+			var offset = jQuery("#" + target).offset();
+			jQuery(context.settings.frame).animate({scrollTop: offset.top}, 1000);
+		},
+		update_location: function(frag) {
+			if (frag != undefined) {
+				history.pushState(null, "", "#" + frag);
+			}
+		}
+	};
+	
+	context.countdown = {
+		init: function() {
+			var self = this;
+			
+			jQuery(document).everyTime(1000, "countdown", function() {
+				self.calculateTime();
+				self.writeTimes();
+			});
+		},
+		calculateTime: function() {
+			context.data.current_time = new Date();
+			
+			context.data.abs_time = context.settings.deadline - context.data.current_time;
+			
+			context.settings.live = (context.data.abs_time <= 0) ? false : true;
+			
+			var ms_per_day = 24 * 60 * 60 * 1000;
+			var ms_per_hr = 60 * 60 * 1000;
+			var ms_per_min = 1000 * 60;
+			
+			var days = Math.floor((context.settings.deadline - context.data.current_time) / ms_per_day);
+			
+			var hours = Math.floor(
+				(context.settings.deadline - context.data.current_time - (days * ms_per_day)) / ms_per_hr
+			);
+			
+			var minutes = Math.floor(
+				(
+					context.settings.deadline 
+					- context.data.current_time 
+					- (days * ms_per_day) 
+					- (hours * ms_per_hr)
+				) / ms_per_min
+			);
+			
+			var seconds = Math.floor(
+				(
+					context.settings.deadline 
+					- context.data.current_time 
+					- (days * ms_per_day) 
+					- (hours * ms_per_hr) 
+					- (minutes * ms_per_min)
+				) / 1000
+			);
+			context.data.time_remaining = {
+				days: days,
+				hours: hours,
+				minutes: minutes,
+				seconds: seconds
+			}
+			
+			
+			function isTimeLeft() {
+				var time_left = true;
+				
+				jQuery.each(context.data.time_remaining, function(index, value) {
+					value = value * 1;
+					if (value < 0) {
+						time_left = false;
+					}
+				});
+				
+				return time_left
+			};
+			
+			context.data.time_left = isTimeLeft();	
+		},
+		writeTimes: function() {			
+			
+			if (context.data.time_left) {
+				if (
+						jQuery("header[role='banner']").size() > 0
+						
+						&& 
+						
+						(
+						 	jQuery(".featured-products").size() > 0
+							||
+							jQuery(".featured").size() > 0
+						)
+					) 
+				{
+					this.writeTime("header");
+				}
+				
+				if (jQuery(".faq").size() > 0) {
+					this.writeTime("faq");
+				}
+				
+				if (jQuery(".product.standard").size() > 0) {
+					this.writeTime("caveat");
+				}
+				
+				if (jQuery(".product.featured").size() > 0) {
+					this.writeTime("product");
+				}
+			}
+			else {
+				// Cancel the timer
+//				$(document).stopTime("countdown");
+				
+				function writeExpiredState() {
+					
+					// Zero out header countdown
+					if (jQuery("header[role='banner']").size() > 0) {
+						jQuery("header .time-remaining").html("New shirts will be here soon. Tick tock.").fadeIn("slow");						
+					}
+					
+					if (jQuery(".home-page").size() > 0) {
+						// Change badge to sold out
+						if (jQuery(".featured-products li.active").size() > 0) {
+							var $badge = jQuery(".featured-products li .badge");
+							$badge.removeClass("new");
+							$badge.addClass("sold-out");
+							$badge.find(".bg-hover").html("Sold Out");
+							
+							// Change price to sold out
+							var $price = jQuery(".featured-products li .product-price").html("Sold Out");
+						}
+					}
+					
+					if (jQuery(".faq").size() > 0) {
+						if (jQuery(".featured-products li.active").size() > 0) {
+							
+							jQuery(".faq .time-remaining").remove();
+						}
+					}
+					
+					if (jQuery(".product.active").size() > 0) {
+						jQuery(".product-info .product-price").html("Sold Out");
+						jQuery(".sizes, .add-to-cart").css("display", "none");
+					}
+				}
+				
+				writeExpiredState();
+			}
+		},
+		writeTime: function(location) {		
+			if (location == "header") {
+				var formatted_time = {
+					days: "",
+					hours: "",
+					minutes: "",
+					seconds: ""
+				};
+				
+				jQuery.each(context.data.time_remaining, function(key, val) {
+					var val_str = val + "";
+					
+					if (key != "days" && val_str.length < 2) {
+						formatted_time[key] = "0" + val_str;
+					}
+					else {
+						formatted_time[key] = val;
+					}
+				});
+			
+				var time_frag = formatted_time.days
+					+ ":" + formatted_time.hours
+					+ ":" + formatted_time.minutes
+					+ ":" + formatted_time.seconds;
+	
+				
+				if (jQuery("header .time").length < 1) {
+					var $time_container = jQuery("header .time-remaining");
+					
+					$time_container.html("<span class='time'>" 
+						+ time_frag 
+						+ "</span> left to buy the featured tee."
+					);
+					
+					$time_container.fadeIn();
+				}
+				else {
+					jQuery("header .time").html(time_frag);
+				}
+			}
+			
+			
+			else if (location == "faq") {
+				var $time_remaining = jQuery("." + location + " .time-remaining");
+				
+				if ($time_remaining.html() == "") {
+					$time_remaining.html("For instance, you only have <span class='timestamp'></span> left to buy the current featured shirts.");
+				}
+				else {
+					var $timestamp = jQuery("." +  location + " .time-remaining .timestamp");					
+					
+					var time_frag = "";
+					
+					jQuery.each(context.data.time_remaining, function(key, val) {
+						switch (key) {
+							case "days": 
+								if (context.data.time_remaining.days > 0) {
+									var label = "days";
+									
+									if (val == 1) {
+										label = "day";
+									}
+									
+									time_frag += val + " " + label + ", ";
+								}
+								break;
+							case "hours":
+								if (
+									context.data.time_remaining.days > 0 
+									|| context.data.time_remaining.days == 0 
+										&& context.data.time_remaining.hours > 0
+								) {
+									var label = "hours";
+									
+									if (val == 1) {
+										label = "hour";
+									}
+									
+									time_frag += val + " " + label + ", ";
+								}
+								break;
+							case "minutes":
+								if (
+									context.data.time_remaining.days > 0 
+									|| context.data.time_remaining.hours > 0
+									|| context.data.time_remaining.days == 0 
+										&& context.data.time_remaining.hours == 0
+										&& context.data.time_remaining.minutes > 0
+								) {
+									var label = "minutes";
+									
+									if (val == 1) {
+										label = "minute";
+									}
+									
+									time_frag += val + " " + label + " and ";
+								}
+								break;
+							case "seconds": 
+								if (
+									context.data.time_remaining.days > 0 
+									|| context.data.time_remaining.hours > 0
+									|| context.data.time_remaining.minutes > 0
+									|| context.data.time_remaining.days == 0 
+										&& context.data.time_remaining.hours == 0
+										&& context.data.time_remaining.minutes == 0
+										&& context.data.time_remaining.seconds > 0
+								) {
+									var label = "seconds";
+									
+									if (val == 1) {
+										label = "second";
+									}
+									
+									time_frag += val + " " + label;
+								}
+								break;
+						}
+					});
+					
+					if (time_frag != "") {
+						$timestamp.html(time_frag);
+					}
+				}
+			}
+			
+			
+			else if (location == "product") {
+				var self = this;
+				
+				function split_time(val) {
+					// Transform into string
+					var val_str = val + "";
+					var digits = [];
+					
+					// Split into tens place and single place
+					if (val_str.length < 2) {
+						digits[0] = 0;
+						digits[1] = val;
+					}
+					else {
+						digits[0] = val_str.charAt(0) * 1;
+						digits[1] = val_str.charAt(1) * 1;
+					}
+					
+					return digits
+				}		
+				
+				// Save number to individual units & update laps		
+				jQuery.each(context.data.time_remaining, function(key, val) {
+					var new_digits = split_time(val);
+					
+					// Loop through each number, compare to previous number
+					// If the new number is a zero and the previous number was not zero, increment the number of laps for that digit
+					for (var i=0; i<new_digits.length; i++) {
+						if (new_digits[i] == 0 && context.data.digits[key][i] != 0) {
+							context.data.laps[key][i]++;
+						}
+					}
+					
+					// Save the new digits in place of the old
+					context.data.digits[key] = new_digits;
+				});			
+				
+				jQuery(".counter span").each(function() {
+					var css_height = 50;
+					
+					var key = jQuery(this).parent().attr("data-time-unit");
+					var place = jQuery(this).attr("data-place-unit");
+					var index = jQuery(this).index();
+					
+					// 0-9: Both digits for days, ones digit of hours, minutes, and seconds
+					// 0-5: Tens digit of minutes and seconds
+					// 0-3: Ones digit of hours if tens digit is a 2
+					// 0-2: Tens digit of hours
+					var ceiling = 10;
+					
+					
+					if (key == "days") {
+						ceiling = 10;
+					}
+					else if (key == "hours") {
+						if (place == "tens") {
+							ceiling = 3;
+						}
+						else if (place == "ones") {
+							if (context.data.digits["hours"][0] == 2) {
+								ceiling = 4;
+								console.log("here")
+							}
+							else {
+								ceiling = 10;
+							}
+						}
+					}
+					else if (key == "minutes") {
+						if (place == "tens") {
+							ceiling = 6;
+						}
+						else if (place == "ones") {
+							ceiling = 10;
+						}
+					}
+					else if (key == "seconds") {
+						if (place == "tens") {
+							ceiling = 6;
+						}
+						else if (place == "ones") {
+							ceiling = 10;
+						}
+					}
+					
+					/*
+					
+					if (place == "tens") {
+						ceiling = (key == "hours") ? 3 : 6;
+					}
+					else if (place == "ones" && key == "hours" && context.data.digits["hours"][0] == 2) {
+						ceiling = 4;
+					}
+					else {
+						ceiling = 10;
+					}
+					
+					*/
+					
+					var raw_number = context.data.digits[key][index];			
+						
+					if (raw_number == 0) {
+						raw_number = ceiling;
+					}
+						
+					var	laps = context.data.laps[key][index]; 
+						
+					// The multiplier should equal the number of the current round. Example: In the first round, the multiplier should be 1.	Since completed laps always lags a round, we need to increment by 1. 
+					var multiplier = laps + 1;
+						
+					// The offset is current round times the number of possible digits
+					var offset = ((multiplier * ceiling) - raw_number) * css_height;
+				
+
+					if (context.data.digits["hours"][0] == 2) {
+						jQuery(".hours .ones").addClass("special");
+					}
+					else {
+						jQuery(".hours .ones").removeClass("special");
+					}
+					
+					jQuery(this).animate({
+						"background-position": "0 " + offset + "px"
+					}, 500, 'easeOutCubic');	
+														
+					jQuery(this).html(context.data.digits[key][index]);
+				});		
+			}
+		}
+	};
+	
+	context.product = {
+		init: function() {
+			var self = this;
+			// Verify we're on the product page
+			if (jQuery(".product").size() > 0) {
+				self.swap_images();
+				self.register_size_selection();
+			}
+		},
+		register_size_selection: function() {
+			var self = this;
+			
+			jQuery(".sizes a").click(function(event) {
+				jQuery(".selected").removeClass("selected");
+				jQuery(this).parent().addClass("selected");
+				jQuery("#option-id").val(jQuery(this).attr("data-option-id"));
+				
+				self.insert_add_to_cart_button();
+				event.preventDefault();
+			});
+		},
+		insert_add_to_cart_button: function() {
+			var self = this;
+			
+			if (jQuery(".add-to-cart").size() == 0) {
+				var btn = jQuery("<a class='add-to-cart' href=''>Add to Cart</a>");
+				jQuery(".error").before(btn);
+				jQuery(btn).fadeIn();
+				self.submit_form();
+			}
+		},
+		swap_images: function() {
+			jQuery(".swap-images").click(function(event) {
+				jQuery(".product-images ul").toggleClass("alt");
+				event.preventDefault();
+			});
+		},
+		submit_form: function() {			
+			jQuery(".add-to-cart").click(function(event) {
+												  
+				function highlight_cart() {
+					var $banner = jQuery("header[role='banner']");
+					
+					$banner.addClass("highlight");
+					
+					jQuery(document).oneTime(300, function() {
+						$banner.removeClass("highlight");
+				   	});
+				}
+				
+				var option_id = jQuery("#option-id").val();
+				
+				context.cart.addItem(option_id, 1, function(cart) {
+													
+					var suffix = "items";
+					
+					if (cart.item_count == 1) {
+						suffix = "item";
+					}
+					jQuery(".cart-quantity").html(cart.item_count + " " + suffix);
+					jQuery(".cart-total").html("$" + context.format.money(cart.total, true));
+					highlight_cart();
+				});
+				
+				event.preventDefault();
+			});								
+		}
+	};
+	
+	context.cartpage = {
+		init: function() {
+			var self = this;
+			
+			if(jQuery(".invoice").size() > 0) {
+				self.remove_item();
+				self.update();
+				self.send_form();
+			}
+		},
+		remove_item: function() {
+			var self = this;
+			
+			jQuery(".remove a").click(function(event) {
+				var $tr = jQuery(this).parents("tr");
+				var item_id = $tr.attr("data-item-id");
+				context.cart.removeItem(item_id, function(cart) {													  
+					$tr.remove();
+					
+					if (jQuery(".invoice tbody tr").size() == 0) {
+						jQuery(".invoice tbody").append("<td colspan=5 class='empty'>Your cart is empty. Try adding a few items from <a href='/'>our gorgeous collection of shirts</a>.</td>");
+						jQuery(".estimated-ship-date, .checkout, .total-cost, .shipping-cost, .update-cart, .error, #country, .shipping-to").fadeOut();
+					}
+					
+					context.data.cart = cart;
+					self.update_totals();
+				});		
+				
+				event.preventDefault();
+			});
+		},
+		update: function() {
+			var self = this;
+			
+			jQuery(".update-cart").click(function(event) {
+				context.cart.updateFromForm('cart-form', function(cart) {
+					context.data.cart = cart;
+					self.update_totals();
+				});					
+				
+				event.preventDefault();
+			});
+		},
+		update_totals: function() {			
+			if (context.data.cart.total == "0.0") {
+				context.data.cart.shipping = {}
+				context.data.cart.shipping.amount = 0.0;
+			}
+			
+			// Update invididual item totals
+			jQuery(context.data.cart.items).each(function(index, value) {
+				jQuery("#cart-form tbody .total").eq(index).html("<span class='currency_sign'>$</span>" + value.price);
+			});
+			
+			jQuery(".shipping-cost .amount").html("$" + context.format.money(context.data.cart.shipping.amount));
+			jQuery(".total-cost .total").html("$" + context.format.money(context.data.cart.total));
+		},
+		send_form: function() {
+			var self = this;
+			jQuery(".checkout").click(function(event) {
+				context.cart.updateFromForm('cart-form', function() {
+					window.location = "/checkout";
+				});
+				event.preventDefault();
+			});
+		},
+		handle_errors: function(errors) {
+			jQuery.each(errors, function(index, value) {
+				jQuery(".error ul").append("<li>" + value + "</li>");
+			});
+		}
+	};
+	context.signup = {
+		config: {
+		},
+		init: function() {
+			var self = this;
+			var $input = jQuery("#mce-EMAIL");
+			this.config.val = $input.val();
+			
+			$input.focus(function() {
+				if ($input.val() == self.config.val) {
+					$input.val("");
+				}
+		  	});
+			
+			$input.blur(function() {
+				if ($input.val() == "") {
+					$input.val(self.config.val);
+				}
+			});
+			
+		}
+	};
+})(UP);

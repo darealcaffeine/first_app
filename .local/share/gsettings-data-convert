@@ -1,0 +1,4 @@
+
+[State]
+timestamp=1303772352
+converted=empathy.convert;gvfs-dns-sd.convert;org.gnome.crypto.cache.convert;gsettings-desktop-schemas.convert;nautilus-sendto-convert;gvfs-smb.convert;gnome-bluetooth;gnome-bluetooth-nst;brasero.convert;mousetweaks.convert;org.gnome.crypto.pgp.convert;

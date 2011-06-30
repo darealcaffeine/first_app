@@ -1,0 +1,67 @@
+/etc/gdm/Xsession: Beginning session setup...
+Setting IM through im-switch for locale=en_US.
+Start IM through /etc/X11/xinit/xinput.d/all_ALL linked to /etc/X11/xinit/xinput.d/default.
+GNOME_KEYRING_CONTROL=/tmp/keyring-OKouWj
+SSH_AUTH_SOCK=/tmp/keyring-OKouWj/ssh
+GNOME_KEYRING_CONTROL=/tmp/keyring-OKouWj
+SSH_AUTH_SOCK=/tmp/keyring-OKouWj/ssh
+GNOME_KEYRING_CONTROL=/tmp/keyring-OKouWj
+SSH_AUTH_SOCK=/tmp/keyring-OKouWj/ssh
+** (nm-applet:1372): DEBUG: old state indicates that this was not a disconnect 0
+Initializing nautilus-gdu extension
+/usr/lib/python2.7/dist-packages/UpdateManager/SimpleGtkbuilderApp.py:35: GtkWarning: Ignoring the separator setting
+  self.builder.add_from_file(path)
+WARNING:root:timeout reached, exiting
+** (process:1356): DEBUG: zeitgeist-datahub.vala:174: Inserting 1 events
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x1a00003 (Authentica)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x1a00003 (Authentica)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+** (process:1356): DEBUG: zeitgeist-datahub.vala:174: Inserting 1 events
+** (process:1356): DEBUG: desktop-launch-listener.vala:118: ran with uri: file:///home/darealcaffeine/Downloads/rvm-1.0.1.tar.gz
+** (process:1356): DEBUG: desktop-launch-listener.vala:118: ran with uri: file:///home/darealcaffeine/Downloads/rvm-1.0.1.tar.gz
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x3e00004 (Archive Ma)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x4000004 (Archive Ma)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+** (process:1356): DEBUG: zeitgeist-datahub.vala:174: Inserting 3 events
+** (process:1356): DEBUG: desktop-launch-listener.vala:118: ran with uri: file:///home/darealcaffeine/Downloads
+
+(nautilus:1346): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:1346): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:1346): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:1346): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:1346): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:1346): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+
+(nautilus:1346): GLib-GObject-CRITICAL **: g_value_get_object: assertion `G_VALUE_HOLDS_OBJECT (value)' failed
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'net usershare' returned error 255: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error No such file or directory
+Please ask your system administrator to enable user sharing.
+
+** (process:1356): DEBUG: zeitgeist-datahub.vala:174: Inserting 3 events
+** (process:1356): DEBUG: zeitgeist-datahub.vala:174: Inserting 1 events
+** (process:1356): DEBUG: zeitgeist-datahub.vala:174: Inserting 1 events
+** (process:1356): DEBUG: zeitgeist-datahub.vala:174: Inserting 1 events
+** (gnome-screensaver-preferences:14739): DEBUG: Found best visual for GL: 0xd0
+** (process:1356): DEBUG: zeitgeist-datahub.vala:174: Inserting 1 events
+
+** (gnome-system-monitor:13217): WARNING **: SELinux was found but is not enabled.
+
+** (nm-applet:1372): DEBUG: old state indicates that this was not a disconnect 2
+** (nm-applet:1372): DEBUG: going for offline with icon: notification-network-ethernet-disconnected
+** (nm-applet:1372): DEBUG: foo_client_state_changed_cb
+** (nm-applet:1372): DEBUG: going for offline with icon: notification-network-disconnected
+** (nm-applet:1372): DEBUG: going for offline with icon: notification-network-disconnected
+(gnome-power-manager:1371): libupower-glib-DEBUG: DBUS timed out, but recovering
+** (nm-applet:1372): DEBUG: old state indicates that this was not a disconnect 1
+** (nm-applet:1372): DEBUG: old state indicates that this was not a disconnect 1
+** (nm-applet:1372): DEBUG: foo_client_state_changed_cb
+** (nm-applet:1372): DEBUG: going for offline with icon: notification-network-disconnected
+** (nm-applet:1372): DEBUG: going for offline with icon: notification-network-disconnected
+** (process:1356): DEBUG: zeitgeist-datahub.vala:174: Inserting 1 events
+** (nm-applet:1372): DEBUG: old state indicates that this was not a disconnect 2

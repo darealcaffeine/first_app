@@ -1,0 +1,31 @@
+/etc/gdm/Xsession: Beginning session setup...
+Setting IM through im-switch for locale=en_US.
+Start IM through /etc/X11/xinit/xinput.d/all_ALL linked to /etc/X11/xinit/xinput.d/default.
+GNOME_KEYRING_CONTROL=/tmp/keyring-h5EFID
+SSH_AUTH_SOCK=/tmp/keyring-h5EFID/ssh
+GNOME_KEYRING_CONTROL=/tmp/keyring-h5EFID
+SSH_AUTH_SOCK=/tmp/keyring-h5EFID/ssh
+GNOME_KEYRING_CONTROL=/tmp/keyring-h5EFID
+SSH_AUTH_SOCK=/tmp/keyring-h5EFID/ssh
+Initializing nautilus-gdu extension
+** (nm-applet:2875): DEBUG: old state indicates that this was not a disconnect 0
+** (nm-applet:2875): DEBUG: old state indicates that this was not a disconnect 0
+** (process:2828): DEBUG: zeitgeist-datahub.vala:174: Inserting 6 events
+** (nm-applet:2875): DEBUG: old state indicates that this was not a disconnect 2
+** (nm-applet:2875): DEBUG: foo_client_state_changed_cb
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x1a00003 (Authentica)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x1a00003 (Authentica)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Invalid WM_TRANSIENT_FOR window 0x3806f16 specified for 0x380d6f0 ().
+Window manager warning: Invalid WM_TRANSIENT_FOR window 0x3811815 specified for 0x3815809 ().
+Window manager warning: Invalid WM_TRANSIENT_FOR window 0x381f5b6 specified for 0x3822e67 ().
+** (process:2828): DEBUG: zeitgeist-datahub.vala:174: Inserting 1 events
+Window manager warning: Invalid WM_TRANSIENT_FOR window 0x382a7a6 specified for 0x382d84b ().
+/usr/lib/python2.7/dist-packages/UpdateManager/UpdateManager.py:462: Warning: /build/buildd/glib2.0-2.28.6/./gobject/gsignal.c:2392: instance `0x92056e8' has no handler with id `913'
+  button.disconnect(id);
+** (process:2828): DEBUG: zeitgeist-datahub.vala:174: Inserting 1 events
+** (process:2828): DEBUG: zeitgeist-datahub.vala:174: Inserting 1 events
+
+** (gnome-system-monitor:9167): WARNING **: SELinux was found but is not enabled.
+

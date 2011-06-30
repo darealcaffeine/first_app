@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="last_notification_time" mtime="1309395129" type="int" value="1309320000"/>
+	<entry name="notify_with_tray" mtime="1309456158" type="bool" value="false"/>
+</gconf>

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+if [[ "$rvm_trace_flag" -eq 1 ]] ; then set -x ; export rvm_trace_flag ; fi
+
+file="$1"
+md5="$2"
+
+if [[ "Linux" = "$(uname)" ]] ; then
+  command="md5sum"
+elif [[ "Darwin" = "$(uname)" ]] ; then
+  command="/sbin/md5 -q"
+fi
+
+file_md5=$($command "$file" | awk '{print $1}')
+
+if [[ "$file_md5" = "$md5" ]] ; then
+  exit 0
+else
+  exit 1
+fi

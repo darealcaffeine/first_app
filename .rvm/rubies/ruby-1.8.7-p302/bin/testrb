@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+ENV['GEM_HOME']=ENV['GEM_HOME'] || '/home/darealcaffeine/.rvm/gems/ruby-1.8.7-p302'
+ENV['GEM_PATH']=ENV['GEM_PATH'] || '/home/darealcaffeine/.rvm/gems/ruby-1.8.7-p302:/home/darealcaffeine/.rvm/gems/ruby-1.8.7-p302@global'
+ENV['PATH']='/home/darealcaffeine/.rvm/gems/ruby-1.8.7-p302/bin:/bin:/home/darealcaffeine/.rvm/rubies/ruby-1.8.7-p302/bin:' + ENV['PATH']
+ENV['BUNDLE_PATH']=ENV['BUNDLE_PATH'] || '/home/darealcaffeine/.rvm/gems/ruby-1.8.7-p302'
+
+require 'test/unit'
+(r = Test::Unit::AutoRunner.new(true)).process_args(ARGV) or
+  abort r.options.banner + " tests..."
+exit r.run

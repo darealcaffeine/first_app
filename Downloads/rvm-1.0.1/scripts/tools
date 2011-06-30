@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+source "$rvm_scripts_path/base"
+
+usage() {
+  echo "Usage: rvm tools {identifier,path-identifier,strings}" 1>&2
+  exit 1
+}
+
+# Return the identifier that's current in use.
+tools_identifier() {
+  __rvm_environment_identifier
+}
+
+tools_path_identifier() {
+  if [[ -z "$1" || ! -d "$1" ]]; then
+    echo "Usage: rvm tools path-identifier 'path-to-heck'"
+    return 1
+  fi
+  # Change to the directory. Do in subshell to keep the env correct.
+  (
+    source "$rvm_scripts_path/rvm"
+    builtin cd "$1"
+    rvm_promptless=1 __rvm_project_rvmrc
+    rvmrc_result="$?"
+    __rvm_environment_identifier
+    exit $rvmrc_result
+  )
+}
+
+tools_strings() {
+  for ruby_name in "$@"; do
+    __rvm_unset_ruby_variables
+    rvm_ruby_string="$ruby_name"
+    if { __rvm_ruby_string && __rvm_select; } >/dev/null 2>&1; then
+      basename "$rvm_ruby_gem_home"
+    else
+      echo ""
+    fi
+  done
+}
+
+[[ -z "$1" ]] && usage
+
+action="$1"; shift
+
+case "$action" in
+  identifier)      tools_identifier ;;
+  path-identifier) tools_path_identifier "$@" ;;
+  strings)         tools_strings "$@" ;;
+  *)               usage ;;
+esac
+
+exit $?

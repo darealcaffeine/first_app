@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="suspend" mtime="1309395324" type="string">
+		<stringvalue>hibernate</stringvalue>
+	</entry>
+	<entry name="power" mtime="1309395321" type="string">
+		<stringvalue>hibernate</stringvalue>
+	</entry>
+	<entry name="lid_battery" mtime="1309395307" type="string">
+		<stringvalue>hibernate</stringvalue>
+	</entry>
+	<entry name="lid_ac" mtime="1309395291" type="string">
+		<stringvalue>hibernate</stringvalue>
+	</entry>
+</gconf>

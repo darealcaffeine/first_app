@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+if [ -s "/home/darealcaffeine/.rvm/environments/system" ] ; then
+  \. "/home/darealcaffeine/.rvm/environments/system"
+  exec gem "$@"
+else
+  echo "ERROR: Missing RVM environment file: '/home/darealcaffeine/.rvm/environments/system'"
+  exit 1
+fi

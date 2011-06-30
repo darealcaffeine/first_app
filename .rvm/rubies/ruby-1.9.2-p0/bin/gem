@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+ENV['GEM_HOME']=ENV['GEM_HOME'] || '/home/darealcaffeine/.rvm/gems/ruby-1.9.2-p0'
+ENV['GEM_PATH']=ENV['GEM_PATH'] || '/home/darealcaffeine/.rvm/gems/ruby-1.9.2-p0:/home/darealcaffeine/.rvm/gems/ruby-1.9.2-p0@global'
+ENV['PATH']='/home/darealcaffeine/.rvm/gems/ruby-1.9.2-p0/bin:/home/darealcaffeine/.rvm/gems/ruby-1.9.2-p0@global/bin:/home/darealcaffeine/.rvm/rubies/ruby-1.9.2-p0/bin:' + ENV['PATH']
+ENV['BUNDLE_PATH']=ENV['BUNDLE_PATH'] || '/home/darealcaffeine/.rvm/gems/ruby-1.9.2-p0'
+
+#--
+# Copyright 2006 by Chad Fowler, Rich Kilmer, Jim Weirich and others.
+# All rights reserved.
+# See LICENSE.txt for permissions.
+#++
+
+require 'rubygems'
+require 'rubygems/gem_runner'
+require 'rubygems/exceptions'
+
+required_version = Gem::Requirement.new ">= 1.8.6"
+
+unless required_version.satisfied_by? Gem.ruby_version then
+  abort "Expected Ruby Version #{required_version}, is #{Gem.ruby_version}"
+end
+
+args = ARGV.clone
+
+begin
+  Gem::GemRunner.new.run args
+rescue Gem::SystemExitException => e
+  exit e.exit_code
+end
+

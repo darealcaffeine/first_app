@@ -1,0 +1,17 @@
+export PATH="/home/darealcaffeine/.rvm/gems/ruby-1.8.7-p302/bin:/bin:/home/darealcaffeine/.rvm/rubies/ruby-1.8.7-p302/bin:/home/darealcaffeine/.rvm/bin:$PATH"
+RUBY_VERSION='ruby-1.8.7-p302'
+export RUBY_VERSION
+GEM_HOME='/home/darealcaffeine/.rvm/gems/ruby-1.8.7-p302'
+export GEM_HOME
+GEM_PATH='/home/darealcaffeine/.rvm/gems/ruby-1.8.7-p302:/home/darealcaffeine/.rvm/gems/ruby-1.8.7-p302@global'
+export GEM_PATH
+BUNDLE_PATH='/home/darealcaffeine/.rvm/gems/ruby-1.8.7-p302'
+export BUNDLE_PATH
+MY_RUBY_HOME='/home/darealcaffeine/.rvm/rubies/ruby-1.8.7-p302'
+export MY_RUBY_HOME
+IRBRC='/home/darealcaffeine/.rvm/rubies/ruby-1.8.7-p302/.irbrc'
+export IRBRC
+rvm_ruby_string='ruby-1.8.7-p302'
+export rvm_ruby_string
+unset rvm_gemset_name
+unset MAGLEV_HOME

@@ -1,0 +1,48 @@
+[2011-06-29 20:52:07,791] - DEBUG - singleton - Checking for another running instance...
+[2011-06-29 20:52:08,484] - INFO - zeitgeist.sql - Using database: /home/darealcaffeine/.local/share/zeitgeist/activity.sqlite
+[2011-06-29 20:52:08,617] - DEBUG - zeitgeist.sql - Updating sql schema
+[2011-06-29 20:52:17,659] - INFO - zeitgeist.sql - DB set up in 9174.57389832ms
+[2011-06-29 20:52:17,660] - DEBUG - zeitgeist.extension - Searching for system extensions in: /usr/share/zeitgeist/_zeitgeist/engine/extensions
+[2011-06-29 20:52:17,681] - DEBUG - zeitgeist.extension - Searching for user extensions in: /home/darealcaffeine/.local/share/zeitgeist/extensions
+[2011-06-29 20:52:19,515] - DEBUG - zeitgeist.extension - No extra extensions
+[2011-06-29 20:52:19,516] - DEBUG - zeitgeist.extension - Found extensions: [<class '_zeitgeist.engine.extensions.datasource_registry.DataSourceRegistry'>, <class '_zeitgeist.engine.extensions.blacklist.Blacklist'>, <class '_zeitgeist.engine.extensions.fts.SearchEngineExtension'>]
+[2011-06-29 20:52:19,532] - DEBUG - zeitgeist.extension - Loading extension 'DataSourceRegistry'
+[2011-06-29 20:52:19,532] - DEBUG - zeitgeist.datasource_registry - No existing data-source data found.
+[2011-06-29 20:52:19,570] - DEBUG - zeitgeist.extension - Loading extension 'Blacklist'
+[2011-06-29 20:52:19,570] - DEBUG - zeitgeist.blacklist - No existing blacklist config found
+[2011-06-29 20:52:19,570] - DEBUG - zeitgeist.extension - Loading extension 'SearchEngineExtension'
+[2011-06-29 20:52:19,571] - DEBUG - zeitgeist.fts - Opening full text index: /home/darealcaffeine/.local/share/zeitgeist/fts.index
+[2011-06-29 20:52:20,100] - INFO - zeitgeist.fts - Empty index detected. Doing full rebuild
+[2011-06-29 20:52:20,107] - INFO - root - Trying to start the datahub
+[2011-06-29 20:52:20,177] - DEBUG - root - Running datahub (/usr/bin/zeitgeist-datahub) with PID=1484
+[2011-06-29 20:52:20,177] - INFO - root - Starting Zeitgeist service...
+[2011-06-29 20:52:20,543] - DEBUG - zeitgeist.engine - Found 0 events IDs in 0.000824s
+[2011-06-29 20:52:20,544] - INFO - zeitgeist.fts - Preparing to index 0 events
+[2011-06-29 20:53:37,182] - DEBUG - zeitgeist.fts - Indexing 'application://gnome-terminal.desktop'
+[2011-06-29 20:53:37,662] - DEBUG - zeitgeist.engine - Inserted 1 events out of 1 in 0.496719s
+[2011-06-29 20:53:38,101] - DEBUG - zeitgeist.fts - Committing FTS index
+[2011-06-29 20:59:36,087] - DEBUG - zeitgeist.fts - Indexing 'application://gnome-terminal.desktop'
+[2011-06-29 20:59:36,379] - DEBUG - zeitgeist.engine - Inserted 1 events out of 1 in 0.293884s
+[2011-06-29 20:59:36,590] - DEBUG - zeitgeist.fts - Committing FTS index
+[2011-06-29 21:02:06,353] - DEBUG - zeitgeist.fts - Indexing 'file:///home/darealcaffeine/Downloads/rvm-1.0.1.tar.gz'
+[2011-06-29 21:02:06,471] - DEBUG - zeitgeist.fts - Indexing 'file:///home/darealcaffeine/Downloads/rvm-1.0.1.tar.gz'
+[2011-06-29 21:02:06,473] - DEBUG - zeitgeist.fts - Indexing 'file:///home/darealcaffeine/Downloads/rvm-1.0.1.tar.gz'
+[2011-06-29 21:02:06,504] - DEBUG - zeitgeist.engine - Inserted 3 events out of 3 in 0.214543s
+[2011-06-29 21:02:06,975] - DEBUG - zeitgeist.fts - Committing FTS index
+[2011-06-29 21:06:14,020] - DEBUG - zeitgeist.fts - Indexing 'file:///home/darealcaffeine/.bashrc'
+[2011-06-29 21:06:14,024] - DEBUG - zeitgeist.fts - Indexing 'file:///home/darealcaffeine/.bashrc'
+[2011-06-29 21:06:14,028] - DEBUG - zeitgeist.fts - Indexing 'file:///home/darealcaffeine/.bashrc'
+[2011-06-29 21:06:14,118] - DEBUG - zeitgeist.engine - Inserted 3 events out of 3 in 0.113346s
+[2011-06-29 21:06:14,530] - DEBUG - zeitgeist.fts - Committing FTS index
+[2011-06-29 21:07:33,469] - DEBUG - zeitgeist.fts - Indexing 'file:///home/darealcaffeine/.bashrc'
+[2011-06-29 21:07:33,665] - DEBUG - zeitgeist.engine - Inserted 1 events out of 1 in 0.206444s
+[2011-06-29 21:07:33,971] - DEBUG - zeitgeist.fts - Committing FTS index
+[2011-06-29 21:08:12,343] - DEBUG - zeitgeist.fts - Indexing 'file:///home/darealcaffeine/.bashrc'
+[2011-06-29 21:08:12,449] - DEBUG - zeitgeist.engine - Inserted 1 events out of 1 in 0.116910s
+[2011-06-29 21:08:12,846] - DEBUG - zeitgeist.fts - Committing FTS index
+[2011-06-29 21:16:18,584] - DEBUG - zeitgeist.fts - Indexing 'application://gnome-screensaver-preferences.desktop'
+[2011-06-29 21:16:19,422] - DEBUG - zeitgeist.engine - Inserted 1 events out of 1 in 1.259462s
+[2011-06-29 21:16:19,486] - DEBUG - zeitgeist.fts - Committing FTS index
+[2011-06-29 21:42:39,041] - DEBUG - zeitgeist.fts - Indexing 'application://gnome-system-monitor.desktop'
+[2011-06-29 21:42:40,358] - DEBUG - zeitgeist.engine - Inserted 1 events out of 1 in 1.426503s
+[2011-06-29 21:42:40,634] - DEBUG - zeitgeist.fts - Committing FTS index

@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+if [[ -z "$rvm_ignore_rvmrc" ]]; then
+  [[ -s /etc/rvmrc ]] && source /etc/rvmrc
+  [[ -s "$HOME/.rvmrc" ]] && source "$HOME/.rvmrc"
+fi
+
+rvm_path="${rvm_path:-$HOME/.rvm}"
+\mkdir -p $rvm_path/src/
+cd $rvm_path/src
+
+stable_version=$(curl -B http://rvm.beginrescueend.com/releases/stable-version.txt 2>/dev/null)
+
+echo "rvm-${stable_version}"
+
+curl -L "http://rvm.beginrescueend.com/releases/rvm-${stable_version}.tar.gz" -o "rvm-${stable_version}.tar.gz"
+
+tar zxf "rvm-${stable_version}.tar.gz"
+
+cd "rvm-${stable_version}"
+
+# v v v This is a godo idea however it does not preserve the executible bit.
+# Needs more thought, perhaps a simple sed instead.
+#dos2unix scripts/* >/dev/null 2>&1
+
+bash scripts/install

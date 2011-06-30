@@ -1,0 +1,85 @@
+#!/usr/bin/env bash
+
+# rvm : Ruby enVironment Manager
+# http://rvm.beginrescueend.com
+# http://github.com/wayneeseguin/rvm
+
+rvm_reload_flag="${rvm_reload_flag:-0}"
+rvm_loaded_flag="${rvm_loaded_flag:-0}"
+if [[ "$rvm_loaded_flag" != "1" ]] || [[ "$rvm_reload_flag" = "1" ]] ; then
+  unset rvm_reload_flag
+
+  if [[ -z "$rvm_ignore_rvmrc" ]]; then
+    for rvmrc in /etc/rvmrc $HOME/.rvmrc ; do
+      if [[ -f "$rvmrc" ]] ; then
+        if \grep -q '^\s*rvm .*$' $rvmrc ; then
+          printf "\nError: $rvmrc is for rvm settings only.\nrvm CLI may NOT be called from within $rvmrc. \nSkipping the loading of $rvmrc"
+          return 1
+        else
+          source "$rvmrc"
+        fi
+      fi
+    done
+  fi
+
+  # Set the default sandboxed value.
+  if [[ -z "$rvm_selfcontained" ]]; then
+    if [[ "root" = "$(whoami)" ]] || [[ -n "$rvm_prefix" && "$rvm_prefix" != "$HOME"/* ]]; then
+      rvm_selfcontained=0
+    else
+      rvm_selfcontained=1
+    fi
+  fi
+
+  if [[ -z "$rvm_prefix" ]] ; then
+    if [[ "$rvm_selfcontained" = "0" ]] ; then
+      rvm_prefix="/usr/local/"
+    else
+      rvm_prefix="$HOME/."
+    fi
+  fi
+
+  # Fix rvm_prefix changes.
+  echo "$rvm_prefix" | \grep -vq '\(\/\|\.\)$' && [[ -d "$rvm_prefix/rvm/scripts" ]]
+  rvm_prefix_needs_trailing_slash="$?"
+  if [[ "$rvm_prefix" = "/usr/local" || "$rvm_prefix_needs_trailing_slash" = "0" ]]; then
+    rvm_prefix="$rvm_prefix/"
+  fi
+  unset rvm_prefix_needs_trailing_slash
+
+  if [[ -z "$rvm_path" ]] ; then
+    rvm_path="${rvm_prefix}rvm"
+  fi
+  rvm_scripts_path="${rvm_scripts_path:-"$rvm_path/scripts"}"
+
+  if [[ -d "$rvm_path" ]] ; then
+    source "$rvm_scripts_path/array"
+    source "$rvm_scripts_path/utility"
+    source "$rvm_scripts_path/initialize"
+    source "$rvm_scripts_path/version"
+    source "$rvm_scripts_path/selector"
+    source "$rvm_scripts_path/cli"
+    source "$rvm_scripts_path/manpages"
+    source "$rvm_scripts_path/cd"
+    source "$rvm_scripts_path/override_gem"
+
+    rvm_loaded_flag=1
+
+    rvm_version="$(tail -n 3 < "${rvm_path}/lib/VERSION.yml" | sed -e 's/^.*: //g' | \tr "\n" '.' | sed -e 's/\.$//')" ; export rvm_version
+
+    alias rvm-restart="source '${rvm_path}/scripts/rvm'"
+
+    if ! command -v ruby >/dev/null 2>&1 || command -v ruby | \grep -v rvm >/dev/null ; then
+      if [[ -s "$rvm_environments_path/default" ]] ; then
+        source "$rvm_environments_path/default"
+      fi
+    fi
+    
+    # Makes sure rvm_bin_path is in PATH atleast once.
+    __rvm_conditionally_add_bin_path
+    
+  else
+    printf "\n\$rvm_path is not set. rvm cannot load."
+  fi
+fi
+

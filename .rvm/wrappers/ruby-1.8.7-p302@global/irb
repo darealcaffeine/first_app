@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+if [ -s "/home/darealcaffeine/.rvm/environments/ruby-1.8.7-p302@global" ] ; then
+  \. "/home/darealcaffeine/.rvm/environments/ruby-1.8.7-p302@global"
+  exec irb "$@"
+else
+  echo "ERROR: Missing RVM environment file: '/home/darealcaffeine/.rvm/environments/ruby-1.8.7-p302@global'"
+  exit 1
+fi

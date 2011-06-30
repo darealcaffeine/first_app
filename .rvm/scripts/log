@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# When rvm_silence_logging is set, don't show anything.
+[[ -n "$rvm_silence_logging" ]] && exit 0
+
+if [[ "$rvm_trace_flag" -eq 2 ]] ; then set -x ; export rvm_trace_flag ; fi
+
+if [[ ! -z "$2" ]] ; then level=$1 ; shift ; else level="info" ; fi
+
+message="$(echo "$1" | sed 's/%/%%/g')"
+
+if [[ "$rvm_interactive" != "1" ]] ; then
+  case "$level" in
+    debug) shift ; printf "\n$level: $message\n"     ;;
+    info)  shift ; printf "\n$level: $message\n"     ;;
+    warn)  shift ; printf "\n$level: $message\n"     ;;
+    error) shift ; printf "\n$level: $message\n" >&2 ;;
+    fail)  shift ; printf "\n$level: $message\n" >&2 ;;
+    *) printf "$message"
+  esac
+else
+  case "$level" in
+    debug) shift ; printf "\n$(tput setaf 5)$level$(tput sgr0): $message\n"     ;;
+    info)  shift ; printf "\n$(tput setaf 2)$level$(tput sgr0): $message\n"     ;;
+    warn)  shift ; printf "\n$(tput setaf 3)$level$(tput sgr0): $message\n"     ;;
+    error) shift ; printf "\n$(tput setaf 1)$level$(tput sgr0): $message\n" >&2 ;;
+    fail)  shift ; printf "\n$(tput setaf 1)$level$(tput sgr0): $message\n" >&2 ;;
+    *) printf "$message"
+  esac
+fi
+set +x
+
+exit 0

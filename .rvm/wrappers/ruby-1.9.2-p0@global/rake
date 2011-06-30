@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+if [ -s "/home/darealcaffeine/.rvm/environments/ruby-1.9.2-p0@global" ] ; then
+  \. "/home/darealcaffeine/.rvm/environments/ruby-1.9.2-p0@global"
+  exec rake "$@"
+else
+  echo "ERROR: Missing RVM environment file: '/home/darealcaffeine/.rvm/environments/ruby-1.9.2-p0@global'"
+  exit 1
+fi

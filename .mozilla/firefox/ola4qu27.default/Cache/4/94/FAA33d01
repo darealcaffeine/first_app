@@ -1,0 +1,664 @@
+
+
+
+<!doctype html>
+<html>
+<head>
+<title>United Pixelworkers &mdash; Home</title>
+
+<link rel="shortcut icon" href="http://www.fullstopinteractive.com/unitedpixelworkers/img/favicon.ico" />
+<link rel="icon" type="image/png" href="http://www.fullstopinteractive.com/unitedpixelworkers/img/favicon.png" />
+<!-- <link rel="apple-touch-icon" href="http://www.fullstopinteractive.com/unitedpixelworkers/img/apple_touch_icon.png"/> -->
+
+<!--[if lt IE 9]>
+<script src="http://www.fullstopinteractive.com/unitedpixelworkers/js/html5.js"></script>
+<![endif]-->
+
+<link href="http://www.fullstopinteractive.com/unitedpixelworkers/css/reset.css" rel="stylesheet">
+<link href="http://www.fullstopinteractive.com/unitedpixelworkers/css/screen_uri.css" rel="stylesheet">
+
+<!-- Libraries & Plugins -->
+<script src="http://use.typekit.com/aei6fel.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+<script src="http://www.fullstopinteractive.com/unitedpixelworkers/js/jquery.timers-1.2.js"></script>
+
+
+
+<script>
+	$.noConflict();
+</script>
+
+<script src="http://www.fullstopinteractive.com/unitedpixelworkers/js/functions_06102011_1100.js"></script>
+
+<meta name="generator" content="Big Cartel" /><script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-10070681-4']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</head>
+
+<body class="home-page">
+		
+<div class="background"></div>
+<div class="container">
+			
+		
+	<header role="banner">
+		<div class="time-remaining"></div>
+		<div class="cart">
+			<ul class="cart-info">
+				<li class="cart-quantity">0 items</li>
+				<li class="cart-total"><span class="currency_sign">$</span>0.00</li>
+			</ul>
+			<a href="/cart" class="view-cart-button">View Cart</a>
+		</div>
+		<div class="bg-hover"></div>
+	</header>
+	
+	
+	<aside>
+		<h1>
+			<a class="logo" href="/">
+				<span class="bg-hover">United Pixelworkers</span>
+			</a>
+		</h1>
+		<nav>
+			<ul>
+				<li>
+					<a href="/#featured-products" id="featured-products-link">
+						<span class="nav-background">
+							<span class="text">Featured</span>
+							<span class="background-hover"></span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="/#standard-tee" id="standard-tee-link">
+						<span class="nav-background">
+							<span class="text">Standard</span>
+							<span class="background-hover"></span>
+						</span>
+					</a>
+				</li>
+				
+				
+				
+				<!-- 
+				<li class="">
+					<a href="/#sale-products" id="sale-products-link">
+						<span class="nav-background">
+							<span class="text">Sale</span>
+							<span class="background-hover"></span>
+						</span>
+					</a>
+				</li>
+				-->
+				
+				<li>
+					<a href="/#retired-products" id="retired-products-link">
+						<span class="nav-background">
+							<span class="text">Retired</span>
+							<span class="background-hover"></span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="/#faq" id="faq-link">
+						<span class="nav-background">
+							<span class="text">FAQ</span>
+							<span class="background-hover"></span>
+						</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="communication">
+			<form action="http://fullstopinteractive.us2.list-manage.com/subscribe/post?u=72a12beb88773f8d735b1ef60&amp;id=6e470c5cb6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate mc-email" target="_blank">
+				<input type="text" value="Sign up to get UP news" name="EMAIL" class="required email" id="mce-EMAIL">
+				<input type="submit" value="Go" name="subscribe" id="mc-embedded-subscribe" class="btn">
+			</form>
+			<a href="mailto:pixelworkers@fullstopinteractive.com" class="email">
+				<span class="bg-default"></span>
+				<span class="bg-hover"></span>
+				Questions? Comments? <b>Email us.</b>
+			</a>
+			<a href="http://twitter.com/pixelworkers" class="twitter">
+				<span class="bg-default"></span>
+				<span class="bg-hover"></span>
+				Follow us <b>@pixelworkers</b>
+			</a>
+		</div>
+	</aside>
+	<div role="main" class="content">
+
+		
+		
+		<h1><img class="masthead" src="http://www.fullstopinteractive.com/unitedpixelworkers/img/masthead.png" height="54" width="568" alt="United Pixelworkers. Fine clothing for web designers and developers." /></h1>
+		
+		
+
+		
+
+		<section class="featured-products showcase" id="featured-products">
+			<ul>
+			
+				
+				
+					
+				
+					<li class="JessicaHische active">
+						<a href="/product/jessica-hische" title="View Jessica Hische">
+							<img src="http://cache0.bigcartel.com/product_images/38019788/hische-front.png" height="653" width="600" alt="Image of Jessica Hische" />
+							
+							
+							
+							<span class="badge new"><span class="bg-hover">New</span></span>
+								
+							
+							
+							<div class="product-info big">
+								<hgroup>
+									<h2 class="product-name">Jessica Hische</h2>
+									<h3 class="product-price"><span class="currency_sign">$</span>20</h3>
+								</hgroup>
+								<div class="bg-hover"></div>
+							</div>
+						</a>
+					</li>
+					
+					
+				
+				
+				
+					
+				
+					<li class="Denver active">
+						<a href="/product/denver" title="View Denver">
+							<img src="http://cache1.bigcartel.com/product_images/38019588/denver-front.png" height="653" width="600" alt="Image of Denver" />
+							
+							
+							
+							<span class="badge new"><span class="bg-hover">New</span></span>
+								
+							
+							
+							<div class="product-info big">
+								<hgroup>
+									<h2 class="product-name">Denver</h2>
+									<h3 class="product-price"><span class="currency_sign">$</span>20</h3>
+								</hgroup>
+								<div class="bg-hover"></div>
+							</div>
+						</a>
+					</li>
+					
+					
+				
+				
+				
+					
+				
+					<li class="Phoenix active">
+						<a href="/product/phoenix" title="View Phoenix">
+							<img src="http://cache0.bigcartel.com/product_images/38019524/phoenix-front.png" height="653" width="600" alt="Image of Phoenix" />
+							
+							
+							
+							<span class="badge new"><span class="bg-hover">New</span></span>
+								
+							
+							
+							<div class="product-info big">
+								<hgroup>
+									<h2 class="product-name">Phoenix</h2>
+									<h3 class="product-price"><span class="currency_sign">$</span>20</h3>
+								</hgroup>
+								<div class="bg-hover"></div>
+							</div>
+						</a>
+					</li>
+					
+					
+				
+				
+				
+			</ul>
+		</section>
+		<section class="standard-tee showcase" id="standard-tee">
+			<hgroup class="divider">
+				<h1>Standard Issue Shirts</h1>
+				<h2><img src="http://www.fullstopinteractive.com/unitedpixelworkers/img/text-grab.png" height="9" width="317" alt="Grab Your Uniform and Report for Duty" /></h2>
+			</hgroup>
+			
+			
+				<a href="/product/standard-issue" title="View StandardIssue">
+					<img src="http://cache0.bigcartel.com/product_images/31621017/standard_front.png" height="653" width="600" alt="Image of StandardIssue" />
+					
+					<div class="product-info big">
+						<hgroup>
+							<h2 class="product-name">Standard Issue</h2>
+							<h3 class="product-price"><span class="currency_sign">$</span>20</h3>
+						</hgroup>
+						<div class="bg-hover"></div>
+					</div>
+				</a>
+			
+			
+		</section>
+		
+		
+		
+		<!--
+		
+		<section class="sale-products thumbnails" id="sale-products">
+			<hgroup class="divider">
+				<h1>Shirts on Sale</h1>
+				<h2><img src="http://www.fullstopinteractive.com/unitedpixelworkers/img/text-stragglers.png" height="10" width="373" alt="Stragglers, Unwanteds & Remainders For Cheap" /></h2>
+			</hgroup>
+			<ul>
+							
+				
+			</ul>			
+		</section>
+		
+		-->
+		
+		
+		
+		
+		<section class="retired-products thumbnails" id="retired-products">
+			<hgroup class="divider">
+				<h1>Retired Shirts</h1>
+				<h2><img src="http://www.fullstopinteractive.com/unitedpixelworkers/img/text-blasts.png" height="9" width="160" alt="Blasts from the Past" /></h2>
+			</hgroup>
+			<ul>
+				
+
+				<li>
+					<a href="/product/jeffrey-zeldman" title="View JeffreyZeldman">
+					
+					
+						<img src="http://cache1.bigcartel.com/product_images/36504604/zeldman-orange-front-small.png" height="283" width="260" alt="Image of Jeffrey Zeldman" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Jeffrey Zeldman</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/zeldman-blue" title="View ZeldmanBlue">
+					
+					
+						<img src="http://cache1.bigcartel.com/product_images/36504548/zeldman-blue-front-small.png" height="283" width="260" alt="Image of Zeldman Blue" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Zeldman Blue</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/brooklyn" title="View Brooklyn">
+					
+					
+						<img src="http://cache0.bigcartel.com/product_images/36504492/brooklyn-front-small.png" height="283" width="260" alt="Image of Brooklyn" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Brooklyn</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/new-york-city-blue" title="View NYCBlue">
+					
+					
+						<img src="http://cache1.bigcartel.com/product_images/36504452/nyc-front-small.png" height="283" width="260" alt="Image of NYC Blue" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">NYC Blue</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/ethan-marcotte" title="View EthanMarcotte">
+					
+					
+						<img src="http://cache0.bigcartel.com/product_images/34987358/marcotte-front-small.png" height="283" width="260" alt="Image of Ethan Marcotte" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Ethan Marcotte</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/atlanta" title="View Atlanta">
+					
+					
+						<img src="http://cache0.bigcartel.com/product_images/34987086/atlanta-front-small.png" height="283" width="260" alt="Image of Atlanta" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Atlanta</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/tyler-galpin" title="View TylerGalpin">
+					
+					
+						<img src="http://cache1.bigcartel.com/product_images/34978146/galpin-front-small.png" height="283" width="260" alt="Image of Tyler Galpin" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Tyler Galpin</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/canada" title="View Canada">
+					
+					
+						<img src="http://cache1.bigcartel.com/product_images/34978174/canada-front-small.png" height="283" width="260" alt="Image of Canada" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Canada</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/bobby-mckenna" title="View BobbyMcKenna">
+					
+					
+						<img src="http://cache0.bigcartel.com/product_images/33329656/UP_pixelfactoryfront-small.png" height="283" width="260" alt="Image of Bobby McKenna" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Bobby McKenna</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/standard-issue-t-shirt" title="View OriginalStandard">
+					
+					
+						<img src="http://cache1.bigcartel.com/product_images/31259017/standard-thumb.png" height="283" width="260" alt="Image of Original Standard" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Original Standard</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/local-series-1-pittsburgh" title="View Pittsburgh">
+					
+					
+						<img src="http://cache0.bigcartel.com/product_images/31259261/pgh-thumb.png" height="283" width="260" alt="Image of Pittsburgh" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Pittsburgh</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/local-series-2-philadelphia" title="View Philadelphia">
+					
+					
+						<img src="http://cache1.bigcartel.com/product_images/31259065/phl-thumb.png" height="283" width="260" alt="Image of Philadelphia" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Philadelphia</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/local-series-3-san-francisco" title="View SanFrancisco">
+					
+					
+						<img src="http://cache0.bigcartel.com/product_images/31259073/sf-thumb.png" height="283" width="260" alt="Image of San Francisco" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">San Francisco</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/local-series-4-new-york-city" title="View NewYorkCity">
+					
+					
+						<img src="http://cache0.bigcartel.com/product_images/31259089/nyc-thumb.png" height="283" width="260" alt="Image of New York City" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">New York City</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/local-series-5-boston" title="View Boston">
+					
+					
+						<img src="http://cache1.bigcartel.com/product_images/31259113/boston-thumb.png" height="283" width="260" alt="Image of Boston" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Boston</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/local-series-6-washington-d-c" title="View WashingtonD.C.">
+					
+					
+						<img src="http://cache1.bigcartel.com/product_images/31259137/dc-thumb.png" height="283" width="260" alt="Image of Washington D.C." />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Washington D.C.</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/local-series-7-chicago" title="View Chicago">
+					
+					
+						<img src="http://cache1.bigcartel.com/product_images/31259161/chicago-thumb.png" height="283" width="260" alt="Image of Chicago" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Chicago</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+				
+
+				<li>
+					<a href="/product/local-series-8-seattle" title="View Seattle">
+					
+					
+						<img src="http://cache1.bigcartel.com/product_images/31259169/seattle-thumb.png" height="283" width="260" alt="Image of Seattle" />
+					
+					
+						<div class="product-info small">
+							<hgroup>
+								<h2 class="product-name">Seattle</h2>
+								<h3 class="product-price">Sold Out</h3>
+							</hgroup>					
+							<div class="bg-hover"></div>							
+						</div>
+					</a>
+				</li>
+				
+							
+				
+			</ul>			
+		</section>
+		<section class="faq" id="faq">
+			<hgroup class="divider">
+				<h1>Frequently Asked Questions</h1>
+				<h2><img src="http://www.fullstopinteractive.com/unitedpixelworkers/img/text-imagine.png" height="9" width="322" alt="… Or at least what we imagine you'd ask" /></h2>
+			</hgroup>
+			<div class="q-and-a">
+					<h3>Things look a little different. What’s changed?</h3>
+					<p>Well, aside from an entirely new site design, our system of selling t-shirts is different. Whenever we introduce a new shirt &mdash; a guest design, a new Local tee, etc. &mdash; it’s only available for 30 days. That’s it. After that, it gets locked away in the Pixelworkers vault forever. <span class="time-remaining"></span> We take orders for 30 days total, then print them and ship them all at once &hellip; it doesn’t matter if you order earlier or later in the month, all orders go to print once the clock hits zero.</p>
+					<h3>Wow, guest designers! Who else is on deck?</h3>
+					<p>Wait and see. We’ll say this &hellip; we have some pretty big names lined up.</p>
+					<h3>What happened to the Local Series?</h3>
+					<p>More locations are coming, we promise. We have limited stock available of the original Local tees, and once they’re gone, they’re gone.</p>
+					<h3>Still giving away free tees for every hundred Twitter followers?</h3>
+					<p>Yep. <a href="http://twitter.com/pixelworkers">Follow us</a>.</p>
+					<h3>What’s the return/refund/exchange policy?</h3>
+					<p>If there’s something wrong with your order, return it to us unworn and unwashed within 30 days and we’ll be happy to issue a refund. Exchanges for featured shirts are a little more difficult. We only print those shirts once, so the chances are low that we’ll have your correct size available. Ask us, and we’ll see what we can do.</p>
+					<h3>How does shipping work?</h3>
+					<p>We ship with the United States Postal Service. Once shipped, US orders take about a week to get to you, international orders take longer. Remember, all orders are printed and shipped at once, so it may take a while if you ordered with a lot of time remaining on the clock. If you order multiple items, they’ll ship together.</p>
+					<h3>I’m new here. What the hell is United Pixelworkers?</h3>
+					<p>United Pixelworkers is an unspoken alliance of web workers &mdash; designers, developers, copywriters, user experience architects, and bloggers &mdash; dedicated to building a better Internet. We’re all in this together.</p>
+					<h3>United Pixelworkers is pretty awesome. Who’s behind this?</h3>
+					<p>United Pixelworkers is conceived, designed, and developed by <a href="http://www.fullstopinteractive.com">Full Stop Interactive</a>, a web design and development shop in Pittsburgh, PA. All shirts are printed by our Steel City friends at <a href="http://thecottonfactory.com">The Cotton Factory</a>.</p>
+			</div>
+		</section>
+
+		
+		<footer>
+			<a class="fs-ribbon" href="http://www.fullstopinteractive.com">
+				<span class="bg-hover">United Pixelworkers is designed and coded in Pittsburgh, PA by Full Stop</span>
+			</a> 
+		</footer>
+	</div>
+</div>
+</body>
+</html>

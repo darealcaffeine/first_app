@@ -1,0 +1,497 @@
+#!/usr/bin/env bash
+
+source "$rvm_scripts_path/base"
+
+rvm_ruby_gem_home="${rvm_ruby_gem_home:-$GEM_HOME}"
+if [[ ! -d "$rvm_ruby_gem_home" ]] && command -v gem > /dev/null 2>&1; then rvm_ruby_gem_home="$(gem env home)" ; fi
+
+usage() {
+  printf "Usage: 'rvm gemset action'\n"
+  printf "       where action is one of: {import,export,create,copy,empty,delete,name,dir,list,gemdir,install,pristine,clear,use,update,globalcache}\n"
+  printf "\n"
+  printf "       Tools for working with and manipulating gemsets within rvm.\n"
+  exit 1
+}
+
+gemset_update() {
+  if [[ -z "$rvm_ruby_strings" ]]; then
+    $rvm_scripts_path/log "info" "Running gem update for all rubies and gemsets."
+    rvm_ruby_strings="$(\ls "$rvm_gems_path" | \grep -v '^\(doc\|cache\|@\|system\)' | \tr '\n' ',')"
+  else
+    $rvm_scripts_path/log "info" "Running gem update for the specified rubies."
+  fi
+  export rvm_ruby_strings
+  $rvm_scripts_path/set "gem" "update"
+  return $?
+}
+
+gemset_globalcache() {
+  if [[ "$1" == "enabled" ]]; then
+    __rvm_using_gemset_globalcache
+    local globalcache_enabled="$?"
+    local gc_status="Unknown"
+    if [[ "$globalcache_enabled" == "0" ]]; then
+      gc_status="Enabled"
+    else
+      gc_status="Disabled"
+    fi
+    $rvm_scripts_path/log "info" "Gemset global cache is currently: $gc_status"
+    return "$globalcache_enabled"
+  elif [[ "$1" == "disable" ]]; then
+    $rvm_scripts_path/log "info" "Removing the global cache (note: this will empty the caches)"
+    for directory_name in $(\ls "$rvm_gems_path"); do
+      current_cache_path="$rvm_gems_path/$directory_name/cache"
+      if [[ -L "$current_cache_path" && "$(readlink "$current_cache_path")" == "$rvm_gems_cache_path" ]]; then
+        $rvm_scripts_path/log "info" "Reverting the gem cache for $directory_name to an empty directory."
+        \rm -f "$current_cache_path" 2>/dev/null
+        \mkdir -p "$current_cache_path" 2>/dev/null
+      fi
+    done; unset full_directory_path directory_name
+    $rvm_scripts_path/db "$rvm_config_path/user" "use_gemset_globalcache" "delete"
+  elif [[ "$1" == "enable" ]]; then
+    $rvm_scripts_path/log "info" "Enabling global cache for gems."
+    \mkdir -p "$rvm_gems_cache_path"
+    for directory_name in $(\ls "$rvm_gems_path"); do
+      current_cache_path="$rvm_gems_path/$directory_name/cache"
+      if [[ -d "$current_cache_path" && ! -L "$current_cache_path" ]]; then
+        $rvm_scripts_path/log "info" "Moving the gem cache for $directory_name to the global cache."
+        mv "$current_cache_path/"*.gem "$rvm_gems_cache_path/" 2>/dev/null
+        \rm -rf "$current_cache_path"
+        ln -nfs "$rvm_gems_cache_path" "$current_cache_path"
+      fi
+    done; unset full_directory_path directory_name
+    $rvm_scripts_path/db "$rvm_config_path/user" "use_gemset_globalcache" "true"
+  else
+    printf "Usage: 'rvm gemset globalcache {enable,disable}\n"
+    printf "        Enable / Disable the use of a global gem cachedir.\n"
+    return 1
+  fi
+}
+
+gemset_name() {
+  gemset_dir |  awk -F${rvm_gemset_separator} '{print $2}'
+}
+
+gemset_dir() {
+  echo "$rvm_ruby_gem_home"
+}
+
+gemset_create() {
+  rvm_ruby_gem_prefix=$(echo $rvm_ruby_gem_home | sed 's/'${rvm_gemset_separator}'.*$//')
+  for gemset in $(echo $gems_args) ; do
+    if [[ "$gemset" == *"${rvm_gemset_separator}"* ]]; then
+      $rvm_scripts_path/log "error" "Can't do that, it contains a \"${rvm_gemset_separator}\"."
+      continue
+    fi
+    gem_home="${rvm_ruby_gem_prefix}${rvm_gemset_separator}${gemset}"
+    \mkdir -p "$gem_home"
+    # When the globalcache is enabled, we need to ensure we setup the cache directory correctly.
+    if __rvm_using_gemset_globalcache; then
+      if [[ -d "$gem_home/cache" && ! -L "$gem_home/cache" ]]; then
+        mv "$gem_home/cache"/*.gem "$rvm_gems_cache_path/" 2>/dev/null
+        \rm -rf "$gem_home/cache"
+      fi
+      ln -nfs "$rvm_gems_cache_path" "$gem_home/cache"
+    fi
+    $rvm_scripts_path/log "info" "Gemset '$gemset' created."
+  done ; unset gem_home
+}
+
+gemset_list() {
+  if [[ -z "$rvm_ruby_selected_flag" ]] ; then __rvm_select ; fi
+
+  $rvm_scripts_path/log "info" "gemsets : for $rvm_ruby_string (found in $rvm_gems_path/)"
+
+  if [[ ! -z "$rvm_gems_path" ]] ; then
+    if [[ ! -z $rvm_ruby_string ]] ; then
+      \ls ${rvm_gems_path}/ | awk -F"${rvm_gemset_separator}" "/${rvm_ruby_string}${rvm_gemset_separator}/{print \$2}" 2>/dev/null
+    else
+      $rvm_scripts_path/log "error" "\$rvm_ruby_string is not set!"
+    fi
+  else
+    $rvm_scripts_path/log "error" "\$rvm_gems_path is not set!"
+  fi
+}
+
+gemset_delete() {
+  if [[ -z "$rvm_ruby_selected_flag" ]] ; then __rvm_select ; fi
+  if [[ ! -z "$rvm_gemset_name" ]] ; then
+    gemdir="$rvm_gems_path/$rvm_ruby_string${rvm_gemset_separator}$rvm_gemset_name"
+    if [[ -d "$gemdir" ]] && [[ "$gemdir" != '/' ]] && [[ ! -z "$rvm_force_flag" ]] ; then
+        \rm -rf  "$gemdir"
+    elif [[ -d "$gemdir" ]] ; then
+      $rvm_scripts_path/log "warn" "Are you SURE you wish to remove the entire gemset directory '$rvm_gemset_name' ($gemdir)?"
+      echo -n "(anything other than 'yes' will cancel) > "
+      read response
+      if [[ "yes" = "$response" ]] ; then
+        \rm -f $gemdir/cache 2>/dev/null
+        \rm -rf $gemdir
+      else
+        $rvm_scripts_path/log "info" "Not doing anything, phew... close call that one eh?"
+      fi
+    else
+      $rvm_scripts_path/log "info" "$gemdir already does not exist."
+    fi ; unset gemdir
+  else
+    $rvm_scripts_path/log "error" "A gemset name must be specified in order to delete a gems."
+  fi
+}
+
+gemset_empty() {
+  if [[ -z "$rvm_ruby_gem_home" ]] ; then __rvm_select ; fi
+  gemdir="$rvm_ruby_gem_home"
+  if [[ -d "$gemdir" ]] && [[ "$gemdir" != '/' ]] && [[ ! -z "$rvm_force_flag" ]] ; then
+    builtin cd $gemdir && \rm -rf ./bin/* ./doc/* ./gems/* ./specifications/*
+  elif [[ -d "$gemdir" ]] ; then
+    $rvm_scripts_path/log "warn" "Are you SURE you wish to remove the installed gemset for gemset '$(basename $gemdir)' ($gemdir)?"
+    echo -n "(anything other than 'yes' will cancel) > "
+    read response
+    if [[ "yes" = "$response" ]] ; then
+      builtin cd $gemdir && \rm -rf ./bin/* ./doc/* ./gems/* ./specifications/*
+    else
+      $rvm_scripts_path/log "info" "Not doing anything, phew... close call that one eh?"
+    fi
+  else
+    $rvm_scripts_path/log "info" "$gemdir already does not exist."
+  fi ; unset gemdir
+}
+
+# Migrate gemsets from ruby X to ruby Y
+gemset_copy() {
+  local source_ruby="$(echo "$gems_args" | awk '{print $1}')"
+  local destination_ruby="$(echo "$gems_args" | awk '{print $2}')"
+
+  if [[ -z "$destination_ruby" || -z "$source_ruby" ]] ; then
+    $rvm_scripts_path/log "error" "Source and destination must be specified: 'rvm gemset copy X Y'"
+    return 1
+  fi
+
+  local source_path="$(rvm_silence_logging=1 rvm "$source_ruby" gem env gemdir)"
+  local destination_path="$(rvm_silence_logging=1 rvm "$destination_ruby" gem env gemdir)"
+
+  if [[ -z "$source_path" ]]; then
+    $rvm_scripts_path/log "error" "Unable to expand ruby '$source_ruby'"
+    return 1
+  fi
+
+  if [[ -z "$destination_path" ]]; then
+    $rvm_scripts_path/log "error" "Unable to expand ruby '$destination_ruby'"
+    return 1
+  fi
+
+  if [[ -d "$source_path" ]] ; then
+    [[ ! -d "$destination_path" ]] && \mkdir -p "$destination_path"
+    $rvm_scripts_path/log "info" "Copying gemset from $source_ruby to $destination_ruby"
+    for dir in bin doc gems specifications cache ; do
+      \mkdir -p "$destination_path/$dir"
+      \cp -Rf "$source_path/$dir" "$destination_path/"
+    done
+    $rvm_scripts_path/log "info" "Making gemset for $destination_ruby pristine."
+    __rvm_run_with_env "gemset.pristine" "$destination_ruby" "rvm gemset pristine"
+  else
+    $rvm_scripts_path/log "error" "Gems directory does not exist for $source_path ($source_path)"
+    return 1
+  fi
+}
+
+gemset_export() {
+  rvm_file_name="${rvm_file_name:-$gems_args}"
+
+  if [[ ! -z "$rvm_ruby_gem_home" ]] ; then
+    export GEM_HOME="$rvm_ruby_gem_home"
+    export GEM_PATH="$rvm_ruby_gem_home/bin:$rvm_gems_path/$rvm_ruby_string${rvm_gemset_separator}global/bin"
+    export BUNDLE_PATH="$rvm_ruby_gem_home"
+  fi
+
+  if [[ -z "$rvm_file_name" ]] ; then
+    if [[ ! -z "$rvm_gemset_name" ]] ; then
+      rvm_file_name="$rvm_gemset_name.gems"
+    else
+      rvm_file_name="default.gems"
+    fi
+  fi
+
+  $rvm_scripts_path/log "info" "Exporting current environments gemset to $rvm_file_name"
+
+  \touch $rvm_file_name
+  echo "# $rvm_file_name generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator" > $rvm_file_name
+  for gem in $(gem list | sed 's#[\(|\)]##g' | sed 's#, #,#g' | \tr ' ' ';') ; do
+    name="$(echo $gem | awk -F';' '{print $1}')"
+    if [[ -z "$rvm_latest_flag" ]] ; then
+      versions="$(echo $gem | awk -F';' '{print $2}' | sed 's#,# #g')"
+      for version in $versions ; do
+        echo "$name -v$version" >> $rvm_file_name
+      done ; unset version versions
+    else
+      echo "$name" >> $rvm_file_name
+    fi ; unset name
+  done ; unset file_name
+}
+
+gemset_import() {
+
+  if [[ ! -z "$rvm_ruby_gem_home" ]] ; then
+    export GEM_HOME="$rvm_ruby_gem_home"
+    export GEM_PATH="$rvm_ruby_gem_home/bin:$rvm_gems_path/$rvm_ruby_string${rvm_gemset_separator}global/bin"
+    export BUNDLE_PATH="$rvm_ruby_gem_home"
+  fi
+
+  if [[ ! -z "$(echo "$gems_args" | awk '/\.gem.*$/')" ]] ; then
+    rvm_gemset_name="$(echo "$gems_args" | sed 's#\.gem.*##g' | sed 's# ##g')"
+  else
+    rvm_gemset_name="$(echo "$gems_args" | sed 's# ##g')"
+  fi
+
+  if [[ -s "$rvm_gemset_name.gems" ]] ; then
+    rvm_file_name="$rvm_gemset_name.gems"
+  elif [[ -s "default.gems" ]] ; then
+    rvm_file_name="default.gems"
+  elif [[ -s "system.gems" ]] ; then
+    rvm_file_name="system.gems"
+  elif [[ -s ".gems" ]] ; then
+    rvm_file_name=".gems"
+  else
+    $rvm_scripts_path/log "error" "No *.gems file found."
+    return 1
+  fi
+
+  \mkdir -p "$rvm_gems_cache_path" # Ensure the base cache dir is initialized.
+
+  if [[ -s "$rvm_file_name" ]] ; then
+    echo "Importing  $rvm_file_name file..."
+    rvm_ruby_gem_list=$(\ls $rvm_ruby_gem_home/specifications/ 2> /dev/null | sed 's#.gems.*$##' 2> /dev/null)
+
+    while read -r line
+    do # Keep this on 2nd line :(
+      if [[ ! -z "$(echo $line | sed 's/\s//g')" ]] ; then
+        gems_args="$line" ; gem_install
+      fi
+    done < <(awk '/^[^#]+/{print}' "${rvm_file_name}")
+  else
+    $rvm_scripts_path/log "error" "${rvm_file_name} does not exist to import from."
+  fi
+}
+
+__rvm_parse_gems_args() {
+  gem="$(echo $gems_args | awk -F';' '{print $1}')"
+  gem_prefix="$(echo $gems_args | awk -F';' '{print $2}')"
+  if $rvm_scripts_path/match "$gem" "\.gem$" ; then
+    gem_name="$(basename $gem | sed 's#\.gem##' | awk -F'-' '{$NF=NULL;print}')"
+    gem_version="$(basename $gem | sed 's#\.gem##' | awk -F'-' '{print $NF}' )"
+    gem_postfix="$(basename $gem | sed "s#.*\.gem##")"
+  else
+    gem_name="$(echo $gem | awk '{print $1}')"
+    if $rvm_scripts_path/match "$gem" "--version" ; then
+      gem_version="$(echo $gem | sed 's#.*--version[=]*[ ]*##' | awk '{print $1}')"
+      gem_postfix="$(echo $gem | sed "s#${gem_name/ /}##" | sed "s#--version[=]*[ ]*${gem_version/ /}##")"
+    elif $rvm_scripts_path/match "$gem" "-v" ; then
+      gem_version="$(echo $gem | sed 's#.*-v[=]*[ ]*##' | awk '{print $1}')"
+      gem_postfix="$(echo $gem | sed "s#${gem_name/ /}##" | sed "s#-v[=]*[ ]*${gem_version/ /}##")"
+    else
+      unset gem_version # no version
+    fi
+  fi
+
+  if [[ -s "$gem" ]] ; then
+    gem_file_name="$gem"
+  elif $rvm_scripts_path/match "$gem" ".gem$" ; then
+    gem_file_name="$gem"
+  elif [[ -z "${gem_version/ /}" ]] ; then
+    gem_file_name="${gem_name/ /}*.gem"
+  else # version
+    gem_file_name="${gem_name/ /}-${gem_version/ /}.gem"
+  fi
+}
+
+# Install a gem
+gem_install() {
+  # First we parse the gem args to pick apart the pieces.
+
+  __rvm_parse_gems_args
+
+  # Now we determine if a .gem cache file is already installed
+  if [[ -z "$rvm_force_flag" ]] && [[ -f "${rvm_ruby_gem_home}/specifications/$(basename $gem_file_name)spec" ]] ; then
+    unset gem
+    $rvm_scripts_path/log "info" "$gem_name $gem_version exists, skipping (--force to re-install)"
+  else
+    if [[ -s "$gem" ]] ; then
+      cache_file="$gem"
+    elif [[ -s "$(__rvm_current_gemcache_dir)/${gem_file_name}" ]] ; then
+      cache_file="$(__rvm_current_gemcache_dir)/${gem_file_name}"
+    else
+      cache_file="${cache_file:-$(\ls "$(__rvm_current_gemcache_dir)/${gem_file_name}" 2> /dev/null | sort | head -n1)}"
+    fi
+
+    if [[ ! -s "$cache_file" ]] ; then
+      if [[ -s "$gem_file_name" ]] ; then
+        gem="$gem_file_name"
+      elif [[ -z "${gem_version/ /}" ]] ; then
+        gem="${gem_name/ /}"
+      else
+        gem="${gem_name/ /} -v $gem_version"
+      fi
+    else # cached
+      gem_file_name="$(basename "$cache_file")"
+      gem_string="$(echo "$gem_file_name" | sed 's#\.gem$##')"
+
+      if [[ -z "$rvm_force_flag" ]] && [[ -s "${rvm_ruby_gem_home}/specifications/$(basename $gem_file_name)spec" ]] ; then
+        unset gem # already installed, not forcing reinstall.
+        $rvm_scripts_path/log "info" "$gem_name $gem_version exists, skipping (--force to re-install)"
+      else
+        if [[ -s "$(__rvm_current_gemcache_dir)/$(basename $gem_file_name)" ]] ; then
+          \mkdir -p "$rvm_tmp_path/$$/"
+          mv "$(__rvm_current_gemcache_dir)/$gem_file_name" "$rvm_tmp_path/$$/$gem_file_name"
+          gem="$rvm_tmp_path/$$/$gem_file_name -f -l"
+        else
+          gem="$cache_file"
+        fi
+      fi
+    fi
+  fi
+
+  # If $gem is still set, go forward with the install.
+  if [[ ! -z "$gem" ]] ; then
+    # TODO: Set vars if fourth field is non-empty (means that there are conditional statements to execute in the gem install line.
+    if [[ "rvm_make_flags_flag" -eq 1 ]] ; then __rvm_make_flags ; fi
+
+    if [[ ! -z "$rvm_ruby_gem_home" ]] && [[ "$rvm_ruby_gem_home" != "$rvm_gems_path" ]] ; then
+      command="GEM_HOME='$rvm_ruby_gem_home' GEM_PATH='$rvm_ruby_gem_home/bin:$rvm_gems_path/${rvm_ruby_string}${rvm_gemset_separator}global/bin' BUNDLE_PATH='${rvm_ruby_gem_home}' ${gem_prefix} gem install $gems_args $rvm_gem_options $gem_postfix $vars"
+    else
+      #--ignore-dependencies
+      command="$gem_prefix gem install --ignore-dependencies $gems_args $rvm_gem_options -q $gem $gem_postfix $vars"
+    fi
+    __rvm_run "gem.install" "$command" "installing ${gem_name} ${gem_version}..."
+    result=$?
+    if [[ $result -eq 0 ]] ; then
+      $rvm_scripts_path/log "info" "$gem_name $gem_version installed, output logged to:\n$rvm_path/log/$rvm_ruby_string/gem.install.log"
+    else
+      $rvm_scripts_path/log "error" "$gem_name $gem_version failed to install, output logged to:\n$rvm_path/log/$rvm_ruby_string/gem.install.error.log"
+    fi
+  fi ; unset gem gem_prefix gem_name gem_version gem_file_name gem_postfix cache_file gem_file_name gem_string gem_action
+
+  return $result
+}
+
+# Output the user's current gem directory.
+gemset_info() {
+  if [[ "$rvm_user_flag" -eq 1 ]] ; then
+    echo $(rvm system ; gem env | \grep "\- $HOME" | awk '{print $NF}')
+  elif [[ "$rvm_system_flag" -eq 1 ]] ; then
+    echo $(rvm system ; gem env $action system)
+  elif [[ ! -z "$rvm_ruby_string" ]] ; then
+    echo $(rvm "$rvm_ruby_string" ; gem env $action)
+  elif [[ ! -z "$GEM_HOME" ]] ; then
+    echo "$GEM_HOME"
+  else
+    gem env $action
+  fi
+}
+
+gemset_prune() {
+  temporary_cache_path="$GEM_HOME/temporary-cache"
+  live_cache_path="$GEM_HOME/cache"
+  \mkdir -p "$temporary_cache_path"
+  $rvm_scripts_path/log "info" "Moving active gems into temporary cache..."
+  while read -r used_gem; do
+    gem_name="$(echo "$used_gem" | sed -e 's/ .*//')"
+    versions="$(echo "$used_gem" | sed -e 's/.* (//' -e 's/)//' | \tr ', ' ' ')"
+    for version in $versions; do
+      cached_gem_name="${gem_name}-${version}.gem"
+      cached_file_path="${live_cache_path}/${cached_gem_name}"
+      if [[ -f "$cached_file_path" ]]; then
+        mv "$cached_file_path" "${temporary_cache_path}/${cached_gem_name}"
+      fi
+    done
+  done < <(gem list --versions)
+  $rvm_scripts_path/log "info" "Removing live cache and restoring temporary cache..."
+  # Switch the cache back.
+  \rm -rf "$live_cache_path"
+  mv "$temporary_cache_path" "$live_cache_path"
+}
+
+gemset_pristine() {
+  gem pristine --all
+}
+
+# Loads the default gemsets for the current interpreter and gemset.
+gemset_initial() {
+  $rvm_scripts_path/log "info" "Importing initial gemsets for $(__rvm_environment_identifier)."
+  \mkdir -p "$rvm_gemsets_path/$(echo "$rvm_ruby_string" | \tr '-' '/')" 2>/dev/null
+  for gemsets_path in $(__rvm_ruby_string_paths_under "$rvm_gemsets_path") ; do
+    if [[ -n "$rvm_gemset_name" ]] ; then
+      if [[ -s "${gemsets_path}/${rvm_gemset_name}.gems" ]] ; then
+        (source "$rvm_scripts_path/rvm"; rvm gemset import "${gemsets_path}/${rvm_gemset_name}.gems") > /dev/null
+      fi
+    else
+      if [[ -d "$gemsets_path" ]] && [[ -s "${gemsets_path}/default.gems" ]] ; then
+        (source "$rvm_scripts_path/rvm"; rvm gemset import "$gemsets_path/default.gems") > /dev/null
+      fi
+      if [[ -d "$gemsets_path" ]] && [[ -s "${gemsets_path}/global.gems" ]] ; then
+        (source "$rvm_scripts_path/rvm"; rvm use "$rvm_ruby_string@global" --create ; rvm gemset import "${gemsets_path}/global.gems") > /dev/null
+      fi
+    fi
+  done
+  $rvm_scripts_path/log "info" "Installation of gems for $(__rvm_environment_identifier) is complete."
+}
+
+unset GEM_PATH
+
+if ! command -v gem > /dev/null ; then
+  $rvm_scripts_path/log "error" "'gem' was not found, cannot perform gem actions (Do you have an RVM ruby selected?)"
+  exit 1
+fi
+
+action="$(echo $* | awk '{print $1}')"
+gems_args="$(echo "$*" | awk '{$1="" ; print}' | __rvm_strip)"
+export rvm_gemset_name
+
+if [[ "import" = "$action" ]] || [[ "load" = "$action" ]] ; then
+  if [[ -z "$rvm_ruby_strings" ]]; then
+    gemset_import
+  else
+    original_env="$(__rvm_environment_identifier)"
+    for rvm_ruby_string in $(echo "$rvm_ruby_strings" | \tr "," " "); do
+      __rvm_become
+      gemset_import
+    done
+    __rvm_become "$original_env"
+    unset original_env
+  fi
+elif [[ "export" = "$action" ]] || [[ "dump" = "$action" ]] ; then
+  gemset_export
+elif [[ "create" = "$action" ]] ; then
+  gemset_create
+elif [[ "copy" = "$action" ]] ; then
+  gemset_copy
+elif [[ "empty" = "$action" ]] ; then
+  gemset_empty
+elif [[ "delete" = "$action" ]] ; then
+  gemset_delete
+elif [[ "name" = "$action" ]] || [[ "string" = "$action" ]]; then
+  gemset_name
+elif [[ "dir" = "$action" ]] ; then
+  gemset_dir
+elif [[ "list" = "$action" ]] ; then
+  gemset_list
+elif [[ "gemdir" = "$action" ]] || [[ "gempath" = "$action" ]] || [[ "gemhome" = "$action" ]] || [[ "home" = "$action" ]] || [[ "path" = "$action" ]] || [[ "version" = "$action" ]] ; then
+  gemset_info
+elif [[ "install" = "$action" ]] ; then
+  gem_install "$@"
+elif [[ "pristine" = "$action" ]] ; then
+  gemset_pristine "$@"
+elif [[ "initial" = "$action" ]] ; then
+  gemset_initial
+elif [[ "prune" = "$action" ]] ; then
+  gemset_prune
+elif [[ "update" = "$action" ]]; then
+  gemset_update
+elif [[ "globalcache" = "$action" ]]; then
+  gemset_globalcache "$2"
+elif [[ "clear" = "$action" ]] ; then
+  $rvm_scripts_path/log "info" "gemset cleared."
+  exit 0
+else
+  usage
+fi
+
+exit $?

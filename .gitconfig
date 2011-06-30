@@ -1,0 +1,7 @@
+[user]
+	name = Darealcaffeine
+	email = darealcaffeine@gmail.com
+[alias]
+	co = checkout
+[core]
+	editor = pico -w
